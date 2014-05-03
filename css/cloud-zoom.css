@@ -1,0 +1,47 @@
+
+/* This is the moving lens square underneath the mouse pointer. */
+.cloud-zoom-lens {
+	border: 1px solid #fff;
+	margin:-1px;	/* Set this to minus the border thickness. */
+	background: #fff;
+    background: rgba(255, 255, 255, .1);
+	cursor:pointer;
+    opacity: 1 !important;
+}
+
+/* This is for the title text. */
+.cloud-zoom-title {
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute !important;
+	background-color:#000;
+	color:#fff;
+	padding:3px;
+	width:100%;
+	text-align:center;
+	font-weight:bold;
+	font-size:10px;
+	top:0px;
+}
+
+/* This is the zoom window. */
+.cloud-zoom-big {
+	overflow:hidden;
+    margin-left: 5px;
+}
+
+/* This is the loading message. */
+.cloud-zoom-loading {
+	background:#000 url(../images/fancybox_loading.gif) no-repeat center;
+    display:block;
+	width:48px !important;
+    height:48px !important;
+    left:50% !important;
+    top:50% !important;
+    margin:-24px 0 0 -24px !important;
+    font-size: 0;
+    line-height:0;
+    overflow: hidden;
+    text-indent:1000px;
+}
+
+

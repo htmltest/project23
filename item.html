@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Магазин шёлка</title>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/cusel.css" />
+        <link rel="stylesheet" href="css/cloud-zoom.css" />
+        <link rel="stylesheet" href="css/print.css" media="print" />
+
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/cusel-fixed-min-2.5.js"></script>
+        <script src="js/cloud-zoom.1.0.3.min.js"></script>
+        <script src="js/tools.js"></script>
+
+        <meta name="viewport" content="width=1280" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-inner">
+
+                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="166" height="52" /></a></div>
+
+                        <!-- header search -->
+                        <div class="header-search">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><span>Поиск по каталогу</span><input type="text" name="search" value="" /></div>
+                                <div class="header-search-submit"><input type="submit" value="" /></div>
+                            </form>
+                        </div>
+                        <!-- header search END -->
+
+                        <div class="header-user">
+                            <a href="#">Войти в кабинет</a> или <a href="#">зарегистрироваться</a>
+                        </div>
+
+                        <nav>
+                            <ul>
+                                <li><a href="#">Новинки</a></li>
+                                <li class="active"><a href="#">Коллекции</a></li>
+                                <li><a href="#">Где купить?</a></li>
+                                <li><a href="#">Образы</a></li>
+                                <li><a href="#">Доставка и оплата</a></li>
+                                <li><a href="#">Полезное</a></li>
+                                <li><a href="#">Партнёрам</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- header cart -->
+                        <div class="header-cart">
+                            <div class="header-cart-inner">
+                                <img src="images/header-cart.png" alt="" width="15" height="12" />
+                                <div class="header-cart-text">В корзине</div>
+                                <div class="header-cart-info">
+                                    <a href="#" class="header-cart-info-link">2 товара на 2545 рублей</a>
+                                    <div class="header-cart-content">
+                                        <div class="header-cart-content-top"></div>
+                                        <div class="header-cart-content-middle">
+                                            <div class="header-cart-container">
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-1.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Тафта полоска</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">3 м.п.</div>
+                                                            <div class="header-cart-item-summ">3771 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-2.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Жаккард цветной</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">1 м.п.</div>
+                                                            <div class="header-cart-item-summ">1269 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="header-cart-summ">5040 <span class="rubl">&#8399;</span></div>
+                                                <div class="header-cart-link"><a href="#">Оформить</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="header-cart-content-bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">Оформить</a>
+                        </div>
+                        <!-- header cart END -->
+
+                        <!-- header contacts -->
+                        <div class="header-contacts">
+                            <div class="header-contacts-phone">+7 495 <strong>5735111</strong></div>
+                            <div class="header-contacts-address">г. Москва, м. Павелецкая, <a href="#">ул. Кожевническая д. 7, т/ц "Громада"</a></div>
+                            <div class="header-contacts-partners"><a href="#">Партнеры в СПб и Киеве</a></div>
+                            <div class="header-callback">
+                                <div class="header-callback-inner">
+                                    <a href="#" class="header-callback-link">Позвоните мне</a>
+                                    <div class="header-callback-content">
+                                        <div class="header-callback-content-top"></div>
+                                        <div class="header-callback-content-middle">
+                                            <div class="header-callback-container">
+                                                <form action="#" method="post">
+                                                    <div class="form-label">Ваши ФИО: <span>*</span></div>
+                                                    <div class="form-input"><input type="text" name="name" value="" class="required" /></div>
+                                                    <div class="form-label">Контактный телефон: <span>*</span></div>
+                                                    <div class="form-input">
+                                                        <input type="text" name="phoneCountry" value="+7" class="callback-phone-country required" />
+                                                        <input type="text" name="phoneCode" value="" class="callback-phone-code required" />
+                                                        <input type="text" name="phone" value="" class="callback-phone required" />
+                                                    </div>
+                                                    <div class="form-submit"><input type="submit" value="Позвоните мне!" /></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="header-callback-content-bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- header contacts END -->
+
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+                    <div class="content">
+                        <div class="breadcrumbs">
+                            <a href="#">Главная страница</a> &nbsp; <span>/</span> &nbsp;
+                            <a href="#">Коллекции</a> &nbsp; <span>/</span> &nbsp;
+                            <a href="#">Галантерейные и костюмно-плательные</a> &nbsp; <span>/</span> &nbsp;
+                            Органза двухслойная с металлической нитью
+                        </div>
+                        <h1>Органза двухслойная с металлической нитью</h1>
+
+                        <!-- item -->
+                        <div class="item">
+
+                            <!-- item left -->
+                            <div class="item-left">
+                                <div class="item-photo">
+                                    <a href="files/item-photo-big.jpg" rel="" class="cloud-zoom"><img src="files/item-photo.jpg" alt="" width="487" height="487" /></a>
+                                </div>
+
+                                <div class="item-social">
+                                    <span class="article-ctrl-likes" id="ya_share_counter"></span>
+                                    <script src="//yandex.st/share/share.js"></script>
+                                    <script>
+                                        var yaShareCounter = new Ya.share({
+                                            'element': 'ya_share_counter',
+                                            'elementStyle': {'quickServices': ['yaru', 'vkontakte', 'facebook', 'twitter', 'odnoklassniki', 'moimir'], 'type': 'none', 'linkIcon': true, 'border': false}
+                                         });
+                                    </script>
+                                </div>
+                            </div>
+                            <!-- item left END -->
+
+                            <!-- item right -->
+                            <div class="item-right">
+
+                                <div class="item-art">Артикул: <strong>4358923</strong></div>
+
+                                <div class="item-price">2551 <span class="rubl">&#8399;</span></div>
+
+                                <!-- item cart -->
+                                <div class="item-cart">
+                                    <form action="windows/basket.html" method="post">
+                                        <div class="item-cart-count">
+                                            <div class="form-select">
+                                                <select name="count">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+                                            <div class="item-count-select-hint">погонных метров</div>
+                                            <div class="item-cart-count-link"><a href="#">1 погонный метр</a></div>
+                                        </div>
+                                        <div class="item-cart-submit"><input type="submit" value="Положить в корзину" /></div>
+                                    </form>
+                                </div>
+                                <!-- item cart END -->
+
+                                <!-- item props -->
+                                <div class="item-props">
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Цвет</div>
+                                        <div class="item-props-value"><a href="#">коричневый</a></div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Материал</div>
+                                        <div class="item-props-value"><a href="#">органза</a></div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Тип ткани</div>
+                                        <div class="item-props-value"><a href="#">гладкокрашенные</a></div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Плотность</div>
+                                        <div class="item-props-value">435 г/см&sup2;</div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Ширина, см</div>
+                                        <div class="item-props-value">140</div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Состав</div>
+                                        <div class="item-props-value">55% шерсть, 40% акрил,<br />4% замша, 1% лён</div>
+                                    </div>
+                                    <div class="item-props-row">
+                                        <div class="item-props-name">Тип плетения</div>
+                                        <div class="item-props-value">обычное</div>
+                                    </div>
+                                </div>
+                                <!-- item props END -->
+
+                                <div class="item-skype">
+                                    <a href="#">
+                                        <img src="images/item-skype.png" alt="" width="73" height="32" />
+                                        Посмотрите презентацию<br />этого образца по Скайпу!
+                                    </a>
+                                </div>
+
+                                <div class="item-delivery">
+                                    <div class="item-delivery-link"><a href="#">Информация о доставке данного товара</a></div>
+                                    <div class="item-delivery-text">
+                                        <div class="item-delivery-text-title">Информация о доставке данного товара</div>
+                                        <p>Оплатить заказ можно наличными деньгами курьеру при получении заказа, банковской картой, через Qiwi кошелек. Подробнее о способах оплаты смотрите <a href="#">здесь</a>.</p>
+                                        <p>Доставка по Москве осуществляется на следующий день после заказа.<br />Заказы на сумму от 6000 рублей доставляются бесплатно.<br />Подробнее обо всех вариантах доставки <a href="#">смотрите здесь</a>.</p>
+                                        <p>Возможен полный или частичный возврат в течение 365 дней с момента получения заказа.<br />Подробнее о возврате товара смотрите <a href="#">здесь</a>.</p>
+                                        <a href="#" class="item-delivery-close"></a>
+                                    </div>
+                                </div>
+
+                                <div class="item-text">Поэтому выставка ускоряет ролевой социальный статус, осознав маркетинг как часть производства. Поэтому выставка ускоряет ролевой социальный статус, осознав маркетинг как часть производства. Поэтому выставка ускоряет ролевой.</div>
+
+                            </div>
+                            <!-- item right END -->
+
+                        </div>
+                        <!-- item END -->
+
+                        <div class="item-back">Вернуться в <a href="#">Галантерейные и костюмно-плательные</a></div>
+
+                    </div>
+                </div>
+                <!-- container END -->
+
+                <!-- main -->
+                <div class="main main-catalogue">
+                    <div class="main-inner">
+                        <div class="main-container">
+                            <div class="old-title">До этого вы смотрели:</div>
+
+                            <!-- main best -->
+                            <div class="main-best main-best-old">
+                                <div class="main-best-list">
+                                    <div class="main-best-list-inner">
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-01.jpg" alt="" width="100" height="100" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-07.jpg" alt="" width="100" height="100" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-03.jpg" alt="" width="100" height="100" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-02.jpg" alt="" width="100" height="100" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- main best END -->
+
+                            <div class="main-title main-title-other">С этим товаром рекомендуем купить:</div>
+
+                            <div class="catalogue">
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-01.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">00000845</div>
+                                    <div class="catalogue-name">Жаккард цветной</div>
+                                    <div class="catalogue-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-07.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">573875</div>
+                                    <div class="catalogue-name">Жаккард шанжановый</div>
+                                    <div class="catalogue-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-03.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">0003466</div>
+                                    <div class="catalogue-name">Тафта полоска</div>
+                                    <div class="catalogue-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-02.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">436987</div>
+                                    <div class="catalogue-name">Шандунг с вышивкой</div>
+                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/catalogue-06.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art"></div>
+                                    <div class="catalogue-name">Шелковый репс</div>
+                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-04.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">436987</div>
+                                    <div class="catalogue-name">Шандунг с вышивкой</div>
+                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-05.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">4358923</div>
+                                    <div class="catalogue-name">Шелковый репс</div>
+                                    <div class="catalogue-price"><strong>2551 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-01.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">00000845</div>
+                                    <div class="catalogue-name">Жаккард цветной</div>
+                                    <div class="catalogue-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+
+                                <a href="#">
+                                    <div class="catalogue-img"><img src="files/main-best-07.jpg" alt="" width="200" height="200" /></div>
+                                    <div class="catalogue-art">573875</div>
+                                    <div class="catalogue-name">Жаккард шанжановый</div>
+                                    <div class="catalogue-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- main END -->
+
+                <!-- bottom -->
+                <div class="bottom">
+                    <div class="bottom-news">
+                        <div class="bottom-title">Новости</div>
+                        <div class="bottom-news-list">
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Межличностный социальный статус, гипотеза и теории</a></div>
+                                <div class="bottom-item-date">21.11.2013, четверг</div>
+                                <div class="bottom-item-text">Общество потребления, безусловно, консолидирует конвергентный пресс-клиппинг, используя опыт предыдущих кампаний. Таргетирование, согласно Ф.Котлеру, достижимо в разумные сроки. Принцип восприятия методически усиливает конструктивный ребрендинг, опираясь на опыт западных коллег.</div>
+                            </div>
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Из ряда вон выходящий процесс стратегического планирования в XXI веке</a></div>
+                                <div class="bottom-item-date">19.11.2013, вторник</div>
+                                <div class="bottom-item-text">Повторный контакт изменяет комплексный стратегический маркетинг, полагаясь на инсайдерскую информацию. Продвижение проекта как всегда непредсказуемо. Мониторинг активности нейтрализует SWOT-анализ, расширяя долю рынка. Структура рынка требовальна к креативу.</div>
+                            </div>
+                        </div>
+                        <div class="bottom-item-all"><a href="#">Все новости</a></div>
+                    </div>
+
+                    <div class="bottom-event">
+                        <div class="bottom-title">Мастер-класс</div>
+                        <div class="bottom-item-name"><a href="#">Мастер-класс по выбору ткани.</a></div>
+                        <div class="bottom-item-date">19.11.2014, вторник</div>
+                        <div class="bottom-item-preview"><img src="files/bottom-event.jpg" alt="" width="278" height="131" /></div>
+                        <div class="bottom-item-text">Москва, Перекопский пр., 254</div>
+                        <div class="bottom-item-all"><a href="#">Все мастер-классы</a></div>
+                    </div>
+                </div>
+                <!-- bottom END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="footer-col">© Интернет-магазин «Настоящий шелк», 2014</div>
+            <div class="footer-col">
+                <div class="footer-phone">+7 495 5735111</div>
+                <p><a href="#">г. Москва, м. Павелецкая, ул. Кожевническая д. 7, т/ц "Громада"</a></p>
+                <p><a href="#">Наши партнёры в Санкт-Петербурге и Киеве</a></p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Где купить?</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="footer-social-1"></a>
+                <a href="#" class="footer-social-2"></a>
+                <a href="#" class="footer-social-3"></a>
+                <a href="#" class="footer-social-4"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>

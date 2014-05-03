@@ -12,7 +12,15 @@ form,
 .article-ctrl-back,
 .slider,
 .main-best-skype,
-.main-categories {display:none}
+.main-categories,
+.item-social,
+.item-cart,
+.item-skype,
+.item-delivery-link,
+.item-back,
+.window {display:none}
+
+.item-delivery-text {display:block; position:relative; left:0; top:0}
 
 .main {margin:0}
 
