@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Магазин шёлка</title>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/cusel.css" />
+        <link rel="stylesheet" href="css/print.css" media="print" />
+
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/cusel-fixed-min-2.5.js"></script>
+        <script src="js/tools.js"></script>
+
+        <meta name="viewport" content="width=1280" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-inner">
+
+                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="166" height="52" /></a></div>
+
+                        <!-- header search -->
+                        <div class="header-search">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><span>Поиск по каталогу</span><input type="text" name="search" value="" /></div>
+                                <div class="header-search-submit"><input type="submit" value="" /></div>
+                            </form>
+                        </div>
+                        <!-- header search END -->
+
+                        <div class="header-user">
+                            <a href="#">Войти в кабинет</a> или <a href="#">зарегистрироваться</a>
+                        </div>
+
+                        <nav>
+                            <ul>
+                                <li><a href="#">Новинки</a></li>
+                                <li class="active"><a href="#">Коллекции</a></li>
+                                <li><a href="#">Где купить?</a></li>
+                                <li><a href="#">Образы</a></li>
+                                <li><a href="#">Доставка и оплата</a></li>
+                                <li><a href="#">Полезное</a></li>
+                                <li><a href="#">Партнёрам</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- header cart -->
+                        <div class="header-cart">
+                            <div class="header-cart-inner">
+                                <img src="images/header-cart.png" alt="" width="15" height="12" />
+                                <div class="header-cart-text">В корзине</div>
+                                <div class="header-cart-info">
+                                    <a href="#" class="header-cart-info-link">2 товара на 2545 рублей</a>
+                                    <div class="header-cart-content">
+                                        <div class="header-cart-content-top"></div>
+                                        <div class="header-cart-content-middle">
+                                            <div class="header-cart-container">
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-1.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Тафта полоска</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">3 м.п.</div>
+                                                            <div class="header-cart-item-summ">3771 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-2.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Жаккард цветной</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">1 м.п.</div>
+                                                            <div class="header-cart-item-summ">1269 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="header-cart-summ">5040 <span class="rubl">&#8399;</span></div>
+                                                <div class="header-cart-link"><a href="#">Оформить</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="header-cart-content-bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">Оформить</a>
+                        </div>
+                        <!-- header cart END -->
+
+                        <!-- header contacts -->
+                        <div class="header-contacts">
+                            <div class="header-contacts-phone">+7 495 <strong>5735111</strong></div>
+                            <div class="header-contacts-address">г. Москва, м. Павелецкая, <a href="#">ул. Кожевническая д. 7, т/ц "Громада"</a></div>
+                            <div class="header-contacts-partners"><a href="#">Партнеры в СПб и Киеве</a></div>
+                            <div class="header-callback">
+                                <div class="header-callback-inner">
+                                    <a href="#" class="header-callback-link">Позвоните мне</a>
+                                    <div class="header-callback-content">
+                                        <div class="header-callback-content-top"></div>
+                                        <div class="header-callback-content-middle">
+                                            <div class="header-callback-container">
+                                                <form action="#" method="post">
+                                                    <div class="form-label">Ваши ФИО: <span>*</span></div>
+                                                    <div class="form-input"><input type="text" name="name" value="" class="required" /></div>
+                                                    <div class="form-label">Контактный телефон: <span>*</span></div>
+                                                    <div class="form-input">
+                                                        <input type="text" name="phoneCountry" value="+7" class="callback-phone-country required" />
+                                                        <input type="text" name="phoneCode" value="" class="callback-phone-code required" />
+                                                        <input type="text" name="phone" value="" class="callback-phone required" />
+                                                    </div>
+                                                    <div class="form-submit"><input type="submit" value="Позвоните мне!" /></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="header-callback-content-bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- header contacts END -->
+
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+                    <div class="content">
+                        <div class="breadcrumbs">
+                            <a href="#">Главная страница</a> &nbsp; <span>/</span> &nbsp;
+                            <a href="#">Какой-то раздел</a> &nbsp; <span>/</span> &nbsp;
+                            Какая-то страница с тектом, например
+                        </div>
+                        <h1>Какая-то страница с текстом, например, в две строки, например</h1>
+                        <p>Традиционный канал поддерживает рекламный клаттер, оптимизируя бюджеты. Косвенная реклама пока плохо индуцирует экспериментальный системный анализ, отвоевывая рыночный сегмент. Привлечение аудитории, согласно Ф.Котлеру, неверно <a href="#">индуцирует повторный контакт</a>, полагаясь на инсайдерскую информацию. PR абстрактен. Производство искажает пресс-клиппинг, опираясь на опыт западных коллег.</p>
+                        <p>Как отмечает Майкл Мескон, целевой сегмент рынка сбалансирован. До недавнего времени считалось, что восприятие марки масштабирует коллективный стратегический рыночный план, опираясь на опыт западных коллег. Согласно последним исследованиям, рекламный макет восстанавливает <a href="#">ролевой направленный</a> маркетинг, повышая конкуренцию. Презентация вырождена. Фокус-группа программирует из ряда вон выходящий потребительский рынок, не считаясь с затратами.</p>
+                        <blockquote>Позиционирование на рынке программирует рекламный блок, работая над проектом.</blockquote>
+                        <h2>Почему ригиден пул лояльных изданий?</h2>
+                        <p>Согласно ставшей уже классической работе Филипа Котлера, рекламное сообщество существенно обуславливает конвергентный рекламный клаттер, опираясь на опыт западных коллег. Наряду с этим, медийная реклама инновационна. Диктат потребителя, безусловно, определяет сегмент рынка, осознав маркетинг как часть производства. VIP-мероприятие разнородно ускоряет экспериментальный медиабизнес, отвоевывая свою долю рынка. Цена клика, согласно Ф.Котлеру, интуитивно <strong>программирует формат события, размещаясь во всех медиа.</strong> Выставка, как следует из вышесказанного, подсознательно продуцирует медиабизнес, полагаясь на инсайдерскую информацию.</p>
+                        <h3>Общественный медиаплан: гипотеза и теории</h3>
+                        <p>Начальная стадия проведения исследования программирует культурный стиль менеджмента, признавая определенные рыночные тенденции. Информационная связь с потребителем, безусловно, неоднозначна. Косвенная реклама искажает тактический формирование имиджа, размещаясь во всех медиа. Как отмечает Майкл Мескон, начальная стадия проведения исследования неоднозначна. CTR стабилизирует эмпирический социальный статус, отвоевывая рыночный сегмент. Потребительская культура актаульна как никогда.</p>
+                        <ul>
+                            <li>Почему достижимо в разумные сроки управление брендом?</li>
+                            <li>Почему порождена временем интеграция?</li>
+                            <li>Сублимированный маркетинг: искусство медиапланирования или общество потребления?</li>
+                        </ul>
+                        <p>К тому же рекламная кампания отталкивает инструмент маркетинга, опираясь на опыт западных коллег. К тому же SWOT-анализ абстрактен. Надо сказать, что производство поддерживает медиамикс, размещаясь во всех медиа. Отсюда естественно следует, что точечное воздействие осмысленно отталкивает эмпирический портрет потребителя, учитывая современные тенденции.</p>
+                        <ol>
+                            <li>Опрос как раскрутка</li>
+                            <li>Эмпирический бренд глазами современников</li>
+                            <li>Потребительский анализ зарубежного опыта: предпосылки и развитие</li>
+                        </ol>
+                        <h4>Почему настроено позитивно привлечение аудитории?</h4>
+                        <p>Позиционирование на рынке программирует рекламный блок, работая над проектом. Product placement концентрирует институциональный системный анализ, оптимизируя бюджеты. Информационная связь с потребителем, не меняя концепции, изложенной выше, откровенна. Ценовая стратегия повсеместно масштабирует потребительский социальный статус, полагаясь на инсайдерскую информацию.</p>
+
+                        <!-- carousel -->
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <ul>
+                                    <li><img src="files/carousel-1.jpg" alt="" /></li>
+                                    <li><img src="files/carousel-2.jpg" alt="" /></li>
+                                    <li><img src="files/carousel-3.jpg" alt="" /></li>
+                                    <li><img src="files/carousel-1.jpg" alt="" /></li>
+                                    <li><img src="files/carousel-2.jpg" alt="" /></li>
+                                    <li><img src="files/carousel-3.jpg" alt="" /></li>
+                                </ul>
+                            </div>
+                            <a href="#" class="carousel-prev"></a>
+                            <a href="#" class="carousel-next"></a>
+                        </div>
+                        <!-- carousel END -->
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ткань</th>
+                                    <th>Описание</th>
+                                    <th>Цвет</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Шёлк</td>
+                                    <td>Гладкий</td>
+                                    <td>Красный</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Жаккард</td>
+                                    <td>Непонятный</td>
+                                    <td>Черный/Белый</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Бязь</td>
+                                    <td>Не очень</td>
+                                    <td>Разный</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Портрет потребителя, в рамках сегодняшних воззрений, индуктивно программирует креативный имидж, не считаясь с затратами. Конкурент отталкивает фактор коммуникации, отвоевывая свою долю рынка. Стратегическое планирование не критично. Интересно отметить, что повышение жизненных стандартов программирует поведенческий таргетинг, невзирая на действия конкурентов.</p>
+                        <p>Узнавание бренда усиливает ролевой целевой трафик, отвоевывая рыночный сегмент. Рейт-карта усиливает коллективный медиабизнес, полагаясь на инсайдерскую информацию. Эволюция мерчандайзинга естественно порождает экспериментальный маркетинг, не считаясь с затратами. Стимулирование коммьюнити отражает эксклюзивный нишевый проект, не считаясь с затратами. Потребительский рынок абстрактен. Потребительский рынок, конечно, многопланово экономит фирменный отраслевой стандарт, полагаясь на инсайдерскую информацию.</p>
+                        <p>Организация практического взаимодействия, суммируя приведенные примеры, откровенна. Концепция маркетинга определяет межличностный потребительский рынок, повышая конкуренцию. Восприятие марки, отбрасывая подробности, искажает конвергентный социальный статус, не считаясь с затратами. Стратегия предоставления скидок и бонусов, вопреки мнению П.Друкера, изящно индуцирует рекламный макет, учитывая результат предыдущих медиа-кампаний.</p>
+                        <div class="pager">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <span>5</span>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                        </div>
+                        <p>Согласно последним исследованиям, фокусировка оправдывает межличностный департамент маркетинга и продаж, не считаясь с затратами. Рыночная информация трансформирует социальный статус, учитывая современные тенденции. Контекстная реклама, безусловно, недостаточно синхронизирует план размещения, отвоевывая свою долю рынка. Концепция новой стратегии ускоряет пресс-клиппинг, оптимизируя бюджеты. Согласно ставшей уже классической работе Филипа Котлера, общество потребления изменяет сублимированный рейтинг.</p>
+
+                        <form action="#" method="post">
+                            <div class="form-label">Представьтесь, пожалуйста:</div>
+                            <div class="form-input"><input type="text" name="name" value="" /></div>
+                            <div class="form-label">Электронная почта: <span>*</span></div>
+                            <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                            <div class="form-label">Текстовое поле: <span>*</span></div>
+                            <div class="form-input"><textarea name="text" rows="5" cols="10" class="required">Деградация эксперментально верифицируема. Микрозападина едва ли квантуема. Фронт, как бы это ни казалось парадоксальным, теоретически возможен. Можно думать, что температуропроводность перманентно отражает коллоид, все дальнейшее далеко выходит за рамки текущего исследования и не будет здесь рассматриваться.</textarea></div>
+                            <div class="form-row">
+                                <div class="form-row-inner">
+                                    <div class="form-checkbox"><span><input type="checkbox" name="checkbox1" /></span>Один</div>
+                                    <div class="form-checkbox"><span><input type="checkbox" name="checkbox2" checked="checked" /></span>Два или три</div>
+                                    <div class="form-checkbox"><span><input type="checkbox" name="checkbox3" checked="checked" /></span>Четыре</div>
+                                </div>
+                            </div>
+                            <div class="form-label">Выберите из списка:</div>
+                            <div class="form-select">
+                                <select name="select1">
+                                    <option value="1">Хлопок</option>
+                                    <option value="2">Шёлк</option>
+                                    <option value="3">Микрофибра</option>
+                                    <option value="4">Бархат</option>
+                                    <option value="5">Вуаль</option>
+                                    <option value="6">Какая-то другая ткань</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-inner">
+                                    <div class="form-radio"><span><input type="radio" name="radio1" value="1" checked="checked" /></span>Один</div>
+                                    <div class="form-radio"><span><input type="radio" name="radio1" value="2" /></span>Два или три</div>
+                                </div>
+                            </div>
+                            <div class="form-label">Вложите файл:</div>
+                            <div class="form-file">
+                                <div class="form-file-text"><span></span></div>
+                                <div class="form-file-btn">Обзор...</div>
+                                <input type="file" name="file" />
+                            </div>
+                            <div class="form-label">Введите слово с картинки:</div>
+                            <div class="form-input">
+                                <div class="form-captcha-img"><img src="files/captcha.jpg" alt="" width="109" height="39" /></div>
+                                <div class="form-captcha-new"><a href="#"><img src="images/captcha-new.png" alt="" width="16" height="16" /></a></div>
+                                <input type="text" name="captcha" value="" class="form-captcha-input required" />
+                            </div>
+                            <div class="form-submit">
+                                <input type="submit" value="Отправить сообщение" />
+                                <input type="reset" value="Очистить форму" class="form-reset" />
+                            </div>
+                        </form>
+
+                        <form action="#" method="post">
+                            <div class="form-cols">
+                                <div class="form-col-left">
+                                    <div class="form-label">Представьтесь, пожалуйста:</div>
+                                    <div class="form-input"><input type="text" name="name" value="" /></div>
+                                    <div class="form-label">Электронная почта: <span>*</span></div>
+                                    <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+                                    <div class="form-label">Текстовое поле: <span>*</span></div>
+                                    <div class="form-input"><textarea name="text" rows="5" cols="10" class="required">Деградация эксперментально верифицируема. Микрозападина едва ли квантуема. Фронт, как бы это ни казалось парадоксальным, теоретически возможен. Можно думать, что температуропроводность перманентно отражает коллоид, все дальнейшее далеко выходит за рамки текущего исследования и не будет здесь рассматриваться.</textarea></div>
+                                    <div class="form-submit">
+                                        <input type="submit" value="Отправить сообщение" />
+                                        <input type="reset" value="Очистить форму" class="form-reset" />
+                                    </div>
+                                </div>
+                                <div class="form-col-right">
+                                    <div class="form-row">
+                                        <div class="form-row-inner">
+                                            <div class="form-checkbox"><span><input type="checkbox" name="checkbox4" /></span>Один</div>
+                                            <div class="form-checkbox"><span><input type="checkbox" name="checkbox5" checked="checked" /></span>Два или три</div>
+                                            <div class="form-checkbox"><span><input type="checkbox" name="checkbox6" checked="checked" /></span>Четыре</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-label">Выберите из списка:</div>
+                                    <div class="form-select">
+                                        <select name="select1">
+                                            <option value="1">Хлопок</option>
+                                            <option value="2">Шёлк</option>
+                                            <option value="3">Микрофибра</option>
+                                            <option value="4">Бархат</option>
+                                            <option value="5">Вуаль</option>
+                                            <option value="6">Какая-то другая ткань</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-row-inner">
+                                            <div class="form-radio"><span><input type="radio" name="radio2" value="1" checked="checked" /></span>Один</div>
+                                            <div class="form-radio"><span><input type="radio" name="radio2" value="2" /></span>Два или три</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-label">Вложите файл:</div>
+                                    <div class="form-file">
+                                        <div class="form-file-text"><span></span></div>
+                                        <div class="form-file-btn">Обзор...</div>
+                                        <input type="file" name="file" />
+                                    </div>
+                                    <div class="form-label">Введите слово с картинки:</div>
+                                    <div class="form-input">
+                                        <div class="form-captcha-img"><img src="files/captcha.jpg" alt="" width="109" height="39" /></div>
+                                        <div class="form-captcha-new"><a href="#"><img src="images/captcha-new.png" alt="" width="16" height="16" /></a></div>
+                                        <input type="text" name="captcha" value="" class="form-captcha-input required" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- container END -->
+
+                <!-- bottom -->
+                <div class="bottom">
+                    <div class="bottom-news">
+                        <div class="bottom-title">Новости</div>
+                        <div class="bottom-news-list">
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Межличностный социальный статус, гипотеза и теории</a></div>
+                                <div class="bottom-item-date">21.11.2013, четверг</div>
+                                <div class="bottom-item-text">Общество потребления, безусловно, консолидирует конвергентный пресс-клиппинг, используя опыт предыдущих кампаний. Таргетирование, согласно Ф.Котлеру, достижимо в разумные сроки. Принцип восприятия методически усиливает конструктивный ребрендинг, опираясь на опыт западных коллег.</div>
+                            </div>
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Из ряда вон выходящий процесс стратегического планирования в XXI веке</a></div>
+                                <div class="bottom-item-date">19.11.2013, вторник</div>
+                                <div class="bottom-item-text">Повторный контакт изменяет комплексный стратегический маркетинг, полагаясь на инсайдерскую информацию. Продвижение проекта как всегда непредсказуемо. Мониторинг активности нейтрализует SWOT-анализ, расширяя долю рынка. Структура рынка требовальна к креативу.</div>
+                            </div>
+                        </div>
+                        <div class="bottom-item-all"><a href="#">Все новости</a></div>
+                    </div>
+
+                    <div class="bottom-event">
+                        <div class="bottom-title">Мастер-класс</div>
+                        <div class="bottom-item-name"><a href="#">Мастер-класс по выбору ткани.</a></div>
+                        <div class="bottom-item-date">19.11.2014, вторник</div>
+                        <div class="bottom-item-preview"><img src="files/bottom-event.jpg" alt="" width="278" height="131" /></div>
+                        <div class="bottom-item-text">Москва, Перекопский пр., 254</div>
+                        <div class="bottom-item-all"><a href="#">Все мастер-классы</a></div>
+                    </div>
+                </div>
+                <!-- bottom END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="footer-col">© Интернет-магазин «Настоящий шелк», 2014</div>
+            <div class="footer-col">
+                <div class="footer-phone">+7 495 5735111</div>
+                <p><a href="#">г. Москва, м. Павелецкая, ул. Кожевническая д. 7, т/ц "Громада"</a></p>
+                <p><a href="#">Наши партнёры в Санкт-Петербурге и Киеве</a></p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Где купить?</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="footer-social-1"></a>
+                <a href="#" class="footer-social-2"></a>
+                <a href="#" class="footer-social-3"></a>
+                <a href="#" class="footer-social-4"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>

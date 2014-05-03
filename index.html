@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Магазин шёлка</title>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/print.css" media="print" />
+
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/tools.js"></script>
+
+        <meta name="viewport" content="width=1280" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="header-inner">
+
+                        <div class="logo"><img src="images/logo.png" alt="" width="166" height="52" /></div>
+
+                        <!-- header search -->
+                        <div class="header-search">
+                            <form action="#" method="post">
+                                <div class="header-search-input"><span>Поиск по каталогу</span><input type="text" name="search" value="" /></div>
+                                <div class="header-search-submit"><input type="submit" value="" /></div>
+                            </form>
+                        </div>
+                        <!-- header search END -->
+
+                        <div class="header-user">
+                            <a href="#">Войти в кабинет</a> или <a href="#">зарегистрироваться</a>
+                        </div>
+
+                        <nav>
+                            <ul>
+                                <li><a href="#">Новинки</a></li>
+                                <li><a href="#">Коллекции</a></li>
+                                <li><a href="#">Где купить?</a></li>
+                                <li><a href="#">Образы</a></li>
+                                <li><a href="#">Доставка и оплата</a></li>
+                                <li><a href="#">Полезное</a></li>
+                                <li><a href="#">Партнёрам</a></li>
+                            </ul>
+                        </nav>
+
+                        <!-- header cart -->
+                        <div class="header-cart">
+                            <div class="header-cart-inner">
+                                <img src="images/header-cart.png" alt="" width="15" height="12" />
+                                <div class="header-cart-text">В корзине пока пусто :(</div>
+                            </div>
+                        </div>
+                        <!-- header cart END -->
+
+                        <!-- header contacts -->
+                        <div class="header-contacts">
+                            <div class="header-contacts-phone">+7 495 <strong>5735111</strong></div>
+                            <div class="header-contacts-address">г. Москва, м. Павелецкая, <a href="#">ул. Кожевническая д. 7, т/ц "Громада"</a></div>
+                            <div class="header-contacts-partners"><a href="#">Партнеры в СПб и Киеве</a></div>
+                            <div class="header-callback">
+                                <div class="header-callback-inner">
+                                    <a href="#" class="header-callback-link">Позвоните мне</a>
+                                    <div class="header-callback-content">
+                                        <div class="header-callback-content-top"></div>
+                                        <div class="header-callback-content-middle">
+                                            <div class="header-callback-container">
+                                                <form action="#" method="post">
+                                                    <div class="form-label">Ваши ФИО: <span>*</span></div>
+                                                    <div class="form-input"><input type="text" name="name" value="" class="required" /></div>
+                                                    <div class="form-label">Контактный телефон: <span>*</span></div>
+                                                    <div class="form-input">
+                                                        <input type="text" name="phoneCountry" value="+7" class="callback-phone-country required" />
+                                                        <input type="text" name="phoneCode" value="" class="callback-phone-code required" />
+                                                        <input type="text" name="phone" value="" class="callback-phone required" />
+                                                    </div>
+                                                    <div class="form-submit"><input type="submit" value="Позвоните мне!" /></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="header-callback-content-bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- header contacts END -->
+
+                    </div>
+                </header>
+
+                <!-- slider -->
+                <div class="slider">
+                    <div class="slider-content">
+                        <ul>
+                            <li>
+                                <img src="files/slider-1.jpg" alt="" class="slider-img" />
+                                <div class="slider-inner">
+                                    <div class="slider-text">
+                                        <div class="slider-text-wrap">
+                                            <div class="slider-text-bg">
+                                                <div class="slider-text-title">Здесь может быть<br />какой-то текст</div>
+                                                <div class="slider-text-descr">Основная стадия проведения рыночного исследования вырождена. Согласно последним исследованиям, организация службы маркетинга неоднозначна. PR довольно неоднозначен. Стимулирование коммьюнити индуктивно продуцирует рыночный формат события, не считаясь с затратами. Точечное воздействие транслирует рыночный социальный статус, осознав маркетинг как часть производства.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="files/slider-2.jpg" alt="" class="slider-img" />
+                                <div class="slider-inner">
+                                    <div class="slider-text">
+                                        <div class="slider-text-wrap">
+                                            <div class="slider-text-bg">
+                                                <div class="slider-text-title">Здесь может быть<br />какой-то текст</div>
+                                                <div class="slider-text-descr">Основная стадия проведения рыночного исследования вырождена. Согласно последним исследованиям, организация службы маркетинга неоднозначна. PR довольно неоднозначен. Стимулирование коммьюнити индуктивно продуцирует рыночный формат события, не считаясь с затратами. Точечное воздействие транслирует рыночный социальный статус, осознав маркетинг как часть производства.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="files/slider-3.jpg" alt="" class="slider-img" />
+                                <div class="slider-inner">
+                                    <div class="slider-text">
+                                        <div class="slider-text-wrap">
+                                            <div class="slider-text-bg">
+                                                <div class="slider-text-title">Здесь может быть<br />какой-то текст</div>
+                                                <div class="slider-text-descr">Основная стадия проведения рыночного исследования вырождена. Согласно последним исследованиям, организация службы маркетинга неоднозначна. PR довольно неоднозначен. Стимулирование коммьюнити индуктивно продуцирует рыночный формат события, не считаясь с затратами. Точечное воздействие транслирует рыночный социальный статус, осознав маркетинг как часть производства.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="slider-prev"></a>
+                    <a href="#" class="slider-next"></a>
+                </div>
+                <!-- slider END -->
+
+                <!-- main -->
+                <div class="main">
+                    <div class="main-inner">
+                        <div class="main-container">
+
+                            <!-- main categories -->
+                            <div class="main-categories">
+                                <div class="main-title">Категории тканей</div>
+                                <div class="main-categories-list">
+                                    <a href="#">Театральные ткани</a>
+                                    <a href="#">Интерьерные</a>
+                                    <a href="#">Галантерейные и костюмно-плательные</a>
+                                    <a href="#">Для батика</a>
+                                    <a href="#">Винтажные</a>
+                                    <a href="#">Белые ткани для окрашивания</a>
+                                    <a href="#">Свето- и звукопоглощающие</a>
+                                    <a href="#">Технические</a>
+                                    <a href="#">С противопожарной пропиткой</a>
+                                </div>
+                            </div>
+                            <!-- main categories END -->
+
+                            <!-- main best -->
+                            <div class="main-best">
+                                <div class="main-title">Лучшие ткани</div>
+                                <div class="main-best-text">Диктат потребителя стремительно ускоряет ребрендинг, невзирая на действия конкурентов. Эффективность действий, суммируя приведенные примеры, последовательно усиливает инвестиционный продукт, учитывая результат предыдущих медиа-кампаний.</div>
+                                <div class="main-best-list">
+                                    <div class="main-best-list-inner">
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-01.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-02.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-03.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="main-best-skype">
+                                            <div class="main-best-skype-text">Кстати, образец любой представленной на сайте<br />ткани Вы можете <strong>в деталях<br />рассмотреть не вставая с кресла —</strong><br />по Скайпу!</div>
+                                            <a href="#" class="main-best-skype-link">Попробовать</a>
+                                        </div>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-04.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-05.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-06.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-01.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="main-best-item">
+                                            <img src="files/main-best-07.jpg" alt="" width="200" height="200" />
+                                            <div class="main-best-item-inner">
+                                                <div class="main-best-item-content">
+                                                    <div class="main-best-item-name">Шандунг цветной с&nbsp;вышивкой</div>
+                                                    <div class="main-best-item-price">1200 <span class="rubl">&#8399;</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- main best END -->
+
+                            <!-- main other -->
+                            <div class="main-other">
+                                <div class="main-title">Дополнительные товары</div>
+
+                                <div class="catalogue">
+                                    <a href="#">
+                                        <div class="catalogue-img"><img src="files/catalogue-01.jpg" alt="" width="200" height="200" /></div>
+                                        <div class="catalogue-art">345987</div>
+                                        <div class="catalogue-name">Нитки шелковые</div>
+                                        <div class="catalogue-price"><strong>76 <span class="rubl">&#8399;</span></strong></div>
+                                    </a>
+
+                                    <a href="#">
+                                        <div class="catalogue-img"><img src="files/catalogue-02.jpg" alt="" width="200" height="200" /></div>
+                                        <div class="catalogue-art">4567</div>
+                                        <div class="catalogue-name">Булавки</div>
+                                        <div class="catalogue-price"><strong>8 <span class="rubl">&#8399;</span></strong></div>
+                                    </a>
+
+                                    <a href="#">
+                                        <div class="catalogue-img"><img src="files/catalogue-03.jpg" alt="" width="200" height="200" /></div>
+                                        <div class="catalogue-art">4333567</div>
+                                        <div class="catalogue-name">Набор пуговиц</div>
+                                        <div class="catalogue-price"><strong>847 <span class="rubl">&#8399;</span></strong></div>
+                                    </a>
+
+                                    <a href="#">
+                                        <div class="catalogue-img"><img src="files/catalogue-04.jpg" alt="" width="200" height="200" /></div>
+                                        <div class="catalogue-art">456</div>
+                                        <div class="catalogue-name">Верёвки</div>
+                                        <div class="catalogue-price"><strong>250 <span class="rubl">&#8399;</span></strong></div>
+                                    </a>
+
+                                    <a href="#">
+                                        <div class="catalogue-img"><img src="files/catalogue-05.jpg" alt="" width="200" height="200" /></div>
+                                        <div class="catalogue-art">45792-45</div>
+                                        <div class="catalogue-name">Молния 45 см.</div>
+                                        <div class="catalogue-price"><strong>87 <span class="rubl">&#8399;</span></strong></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- main other END -->
+
+                            <!-- clients -->
+                            <div class="clients">
+                                <div class="main-title">Нас выбрали лучшие:</div>
+                                <div class="clients-inner">
+                                    <img src="files/client-1.png" alt="" width="150" height="90" />
+                                    <img src="files/client-2.png" alt="" width="150" height="161" />
+                                    <img src="files/client-3.png" alt="" width="300" height="123" />
+                                    <img src="files/client-4.png" alt="" width="150" height="121" />
+                                    <img src="files/client-5.png" alt="" width="150" height="158" />
+                                </div>
+                            </div>
+                            <!-- clients END -->
+                        </div>
+                    </div>
+                </div>
+                <!-- main END -->
+
+                <!-- bottom -->
+                <div class="bottom">
+                    <div class="bottom-news">
+                        <div class="bottom-title">Новости</div>
+                        <div class="bottom-news-list">
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Межличностный социальный статус, гипотеза и теории</a></div>
+                                <div class="bottom-item-date">21.11.2013, четверг</div>
+                                <div class="bottom-item-text">Общество потребления, безусловно, консолидирует конвергентный пресс-клиппинг, используя опыт предыдущих кампаний. Таргетирование, согласно Ф.Котлеру, достижимо в разумные сроки. Принцип восприятия методически усиливает конструктивный ребрендинг, опираясь на опыт западных коллег.</div>
+                            </div>
+                            <div class="bottom-news-item">
+                                <div class="bottom-item-name"><a href="#">Из ряда вон выходящий процесс стратегического планирования в XXI веке</a></div>
+                                <div class="bottom-item-date">19.11.2013, вторник</div>
+                                <div class="bottom-item-text">Повторный контакт изменяет комплексный стратегический маркетинг, полагаясь на инсайдерскую информацию. Продвижение проекта как всегда непредсказуемо. Мониторинг активности нейтрализует SWOT-анализ, расширяя долю рынка. Структура рынка требовальна к креативу.</div>
+                            </div>
+                        </div>
+                        <div class="bottom-item-all"><a href="#">Все новости</a></div>
+                    </div>
+
+                    <div class="bottom-event">
+                        <div class="bottom-title">Мастер-класс</div>
+                        <div class="bottom-item-name"><a href="#">Мастер-класс по выбору ткани.</a></div>
+                        <div class="bottom-item-date">19.11.2014, вторник</div>
+                        <div class="bottom-item-preview"><img src="files/bottom-event.jpg" alt="" width="278" height="131" /></div>
+                        <div class="bottom-item-text">Москва, Перекопский пр., 254</div>
+                        <div class="bottom-item-all"><a href="#">Все мастер-классы</a></div>
+                    </div>
+                </div>
+                <!-- bottom END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+            <div class="footer-col">© Интернет-магазин «Настоящий шелк», 2014</div>
+            <div class="footer-col">
+                <div class="footer-phone">+7 495 5735111</div>
+                <p><a href="#">г. Москва, м. Павелецкая, ул. Кожевническая д. 7, т/ц "Громада"</a></p>
+                <p><a href="#">Наши партнёры в Санкт-Петербурге и Киеве</a></p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Где купить?</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="footer-social-1"></a>
+                <a href="#" class="footer-social-2"></a>
+                <a href="#" class="footer-social-3"></a>
+                <a href="#" class="footer-social-4"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>

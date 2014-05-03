@@ -1,0 +1,20 @@
+.cusel,
+.cuselFrameRight {background:url(../images/select.png) no-repeat}
+.cusel {height:30px; display:inline-block; position:relative; cursor:pointer; z-index:1; outline:none; font-size:14px; line-height:30px}
+.cuselFrameRight {position:absolute; z-index:2; top:0; right:0; height:30px; width:30px; background-position:right top}
+.cuselText {height:30px; padding:0 0 0 11px; cursor:pointer; overflow:hidden; position:absolute; z-index:1; top:0; left:0; outline:none}
+.cusel span {display:block; cursor:pointer; white-space:nowrap; padding:0 10px; zoom:1; font-size:14px; line-height:24px; height:24px}
+.cusel span:hover,
+.cusel .cuselOptHover {background:#700a53; color:#fff}
+.cusel .cuselActive {background:#700a53 !important; color:#fff !important; cursor:default}
+.cuselOpen {z-index:999}
+.cusel .cusel-scroll-wrap {display:block; visibility:hidden; position:absolute; left:0; top:29px; background:#fff; min-width:100%; width:auto}
+.cusel .jScrollPaneContainer {position:relative; overflow:hidden; z-index:5; border:1px solid #ccc; background:#fff}
+.cusel .jScrollPaneTrack {height:100%; width:16px !important; background:url(../images/select-track.png); position:absolute; top:0; right:0}
+.cusel .jScrollPaneDrag {position:absolute; background:url(../images/select-drag.png) left center; cursor:pointer; width:16px !important; right:0; overflow:hidden}
+.cusel .jScrollPaneDragTop {position:absolute; top:0; left:0; width:16px !important; height:2px !important; font:0/0 serif; overflow:hidden; background:url(../images/select-drag-top.png)}
+.cusel .jScrollPaneDragBottom {position:absolute; bottom:0; left:0; width:16px !important; height:2px !important; font:0/0 serif; overflow:hidden; background:url(../images/select-drag-bottom.png)}
+.cusel .jScrollArrowUp {position:absolute; top:0; right:0; width:16px !important; height:15px; cursor:pointer; background:url(../images/select-arrow.png) no-repeat; overflow:hidden}
+.cusel .jScrollArrowDown {width:16px !important; height:16px; position:absolute; top:auto; bottom:0; right:0; cursor:pointer; background:url(../images/select-arrow.png) no-repeat left -15px; overflow:hidden}
+
+.cusel-iPad .cusel-scroll-pane {height:150px; overflow-y:auto !important}

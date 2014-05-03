@@ -1,0 +1,27 @@
+.header-search,
+.header-user,
+nav,
+.header-cart,
+.header-contacts-partners,
+.header-callback,
+.pager,
+form,
+.footer-right,
+.bottom-item-all,
+.article-ctrl-likes,
+.article-ctrl-back,
+.slider,
+.main-best-skype,
+.main-categories {display:none}
+
+.main {margin:0}
+
+header,
+.container {background:none}
+
+.header-inner {height:150px}
+
+.container {padding:0}
+
+a,
+.catalogue-name {text-decoration:none; color:#000}
