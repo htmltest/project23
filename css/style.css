@@ -1,12 +1,19 @@
+@font-face {font-family:"pt_serif"; src:url("../fonts/pt_serif-web-regular-webfont.eot"); src:url("../fonts/pt_serif-web-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pt_serif-web-regular-webfont.woff") format("woff"), url("../fonts/pt_serif-web-regular-webfont.ttf") format("truetype"), url("../fonts/pt_serif-web-regular-webfont.svg#pt_serifregular") format("svg"); font-weight:normal; font-style:normal}
+@font-face {font-family:"pt_serif"; src:url("../fonts/pt_serif-web-bold-webfont.eot"); src:url("../fonts/pt_serif-web-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pt_serif-web-bold-webfont.woff") format("woff"), url("../fonts/pt_serif-web-bold-webfont.ttf") format("truetype"), url("../fonts/pt_serif-web-bold-webfont.svg#pt_serifbold") format("svg"); font-weight:bold; font-style:normal}
+@font-face {font-family:"pt_serif"; src:url("../fonts/pt_serif-web-bolditalic-webfont.eot"); src:url("../fonts/pt_serif-web-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pt_serif-web-bolditalic-webfont.woff") format("woff"), url("../fonts/pt_serif-web-bolditalic-webfont.ttf") format("truetype"), url("../fonts/pt_serif-web-bolditalic-webfont.svg#pt_serifbold_italic") format("svg"); font-weight:bold; font-style:italic}
+@font-face {font-family:"pt_serif"; src:url("../fonts/pt_serif-web-italic-webfont.eot"); src:url("../fonts/pt_serif-web-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pt_serif-web-italic-webfont.woff") format("woff"), url("../fonts/pt_serif-web-italic-webfont.ttf") format("truetype"), url("../fonts/pt_serif-web-italic-webfont.svg#pt_serifitalic") format("svg"); font-weight:normal; font-style:italic}
+
 html {min-width:1000px; height:100%}
 
-body {height:100%; margin:0; padding:0; font:15px/19px "PT Serif", serif; color:#000; min-width:1000px; background:#fff url(../images/top.png) no-repeat center top}
+body {height:100%; margin:0; padding:0; font:15px/19px "Tinos", serif; color:#000; min-width:1000px; background:#fff url(../images/top.png) no-repeat center top}
 .page-404 {background:#fff}
 
 a {color:#700a53; outline:none}
 a:hover {text-decoration:none}
 
 img {border:none}
+
+.rubl {font-family:"pt_serif", serif}
 
 .wrapper {min-height:100%; min-width:1000px; width:100%; position:relative; overflow:hidden}
 .wrapper-inner {padding:0 0 291px 0}
@@ -25,7 +32,7 @@ header {position:relative; z-index:10; background:url(../images/arrow-bottom.png
 .header-search form {margin:0; padding:0; position:relative; width:234px; height:28px; border:1px solid #ccc}
 .header-search-input {position:absolute; left:0; top:0; width:200px}
 .header-search-input span {display:none; position:absolute; left:10px; top:4px; font-size:14px; line-height:18px; color:#868686; font-style:italic}
-.header-search-input input {position:relative; vertical-align:top; border:none; background:url(../images/blank.gif); color:#000; margin:0; padding:4px 0 6px 10px; outline:none; width:190px; height:18px; font:14px/18px "PT Serif", serif}
+.header-search-input input {position:relative; vertical-align:top; border:none; background:url(../images/blank.gif); color:#000; margin:0; padding:4px 0 6px 10px; outline:none; width:190px; height:18px; font:14px/18px "Tinos", serif}
 .header-search-submit {position:absolute; right:10px; top:8px}
 .header-search-submit input {vertical-align:top; width:12px; height:12px; border:none; background:url(../images/header-search-submit.png); margin:0; padding:0; outline:none; cursor:pointer}
 
@@ -97,9 +104,9 @@ nav ul li.active a {color:#444}
 .form-label span {color:#b5744e}
 .form-input {width:100%; padding:0 0 12px 0}
 .form-input:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.form-input input {float:left; margin:0 15px 0 0; padding:4px 10px 6px 10px; outline:none; color:#000; vertical-align:top; border:1px solid #ccc; font:14px/18px "PT Serif", serif; height:18px; width:294px}
+.form-input input {float:left; margin:0 15px 0 0; padding:4px 10px 6px 10px; outline:none; color:#000; vertical-align:top; border:1px solid #ccc; font:14px/18px "Tinos", serif; height:18px; width:294px}
 .form-input input.error {outline:2px solid #cb9d83}
-.form-input textarea {float:left; margin:0 15px 0 0; padding:4px 10px 6px 10px; outline:none; color:#000; vertical-align:top; border:1px solid #ccc; font:14px/18px "PT Serif", serif; height:126px; width:604px; resize:none; overflow:auto}
+.form-input textarea {float:left; margin:0 15px 0 0; padding:4px 10px 6px 10px; outline:none; color:#000; vertical-align:top; border:1px solid #ccc; font:14px/18px "Tinos", serif; height:126px; width:604px; resize:none; overflow:auto}
 .form-input textarea.error {outline:2px solid #cb9d83}
 .form-input label.error {float:left; font-size:13px; line-height:18px; padding:5px 0 0 0; color:#b5744e; font-style:italic}
 .form-row {padding:8px 0 0 0; margin:0 0 0 -25px}
@@ -127,7 +134,7 @@ nav ul li.active a {color:#444}
 .form-col-right .form-input input.form-captcha-input {margin:0}
 .form-submit {width:100%; padding:8px 0 0 0}
 .form-submit:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.form-submit input {float:left; vertical-align:top; border:none; margin:0; padding:0 20px; outline:none; overflow:visible; background:#700a53; color:#fff; height:44px; font:19px/40px "PT Serif", serif; cursor:pointer}
+.form-submit input {float:left; vertical-align:top; border:none; margin:0; padding:0 20px; outline:none; overflow:visible; background:#700a53; color:#fff; height:44px; font:19px/40px "Tinos", serif; cursor:pointer}
 .form-submit input:hover {background:#9b0e74}
 .form-submit input:active {background:#420631}
 .form-submit input.form-reset {background:none; padding:0; margin:13px 0 0 20px; color:#6e6e6e; font-style:italic; font-size:15px; line-height:19px; height:20px; border-bottom:1px dashed #6e6e6e}
@@ -222,7 +229,7 @@ nav ul li.active a {color:#444}
 .cart-item-count {display:table-cell; vertical-align:middle; width:230px; padding:0 0 10px 0}
 .cart-item-count-title {float:left; line-height:30px; padding:0 12px 0 0}
 .cart-item-count-input {float:left}
-.cart-item-count-input input {vertical-align:top; border:1px solid #ccc; background:#fff; margin:0; padding:4px 11px; outline:none; width:42px; height:20px; font:14px/20px "PT Serif", serif; color:#000}
+.cart-item-count-input input {vertical-align:top; border:1px solid #ccc; background:#fff; margin:0; padding:4px 11px; outline:none; width:42px; height:20px; font:14px/20px "Tinos", serif; color:#000}
 .cart-item-count-unit {float:left; font-size:14px; line-height:30px; padding:0 0 0 10px}
 .cart-item-price {display:table-cell; vertical-align:middle; width:135px; font-style:italic; font-size:17px; padding:0 0 10px 0}
 .cart-item-summ {display:table-cell; vertical-align:middle; width:132px; font-style:italic; font-size:25px; line-height:27px; font-weight:bold; padding:0 0 10px 0}
@@ -231,7 +238,7 @@ nav ul li.active a {color:#444}
 .cart-item-del a:hover {background-position:left -11px}
 .cart-summ {border-top:1px solid #e5e5e5; text-align:center; font-size:35px; line-height:39px; font-weight:bold; font-style:italic; padding:22px 0 0 0}
 .cart-submit {text-align:center; padding:4px 0 0 0}
-.cart-submit input {vertical-align:top; overflow:visible; border:none; background:none; margin:0; padding:0; outline:none; color:#700a53; font:25px/25px "PT Serif", serif; text-decoration:underline; cursor:pointer}
+.cart-submit input {vertical-align:top; overflow:visible; border:none; background:none; margin:0; padding:0; outline:none; color:#700a53; font:25px/25px "Tinos", serif; text-decoration:underline; cursor:pointer}
 .cart-submit input:hover {color:#b5744e}
 
 .slider {position:relative; margin-top:-96px; height:680px}
@@ -426,7 +433,7 @@ nav ul li.active a {color:#444}
 .order-all-delivery {float:left; color:#b5744e; padding:0 0 0 48px}
 .order-all-summ {float:right; font-weight:bold}
 .order-submit {text-align:center; padding:38px 0 0 0}
-.order-submit input {vertical-align:top; overflow:visible; border:none; background:#700a53; margin:0; padding:0 20px; height:44px; outline:none; color:#fff; font:19px/44px "PT Serif", serif; cursor:pointer}
+.order-submit input {vertical-align:top; overflow:visible; border:none; background:#700a53; margin:0; padding:0 20px; height:44px; outline:none; color:#fff; font:19px/44px "Tinos", serif; cursor:pointer}
 .order-submit input:hover {background:#b5744e}
 
 .old-title {text-align:center; font-size:25px; line-height:25px; padding:26px 0 0 0}
@@ -454,7 +461,7 @@ nav ul li.active a {color:#444}
 .item-cart-count-link a {text-decoration:none; background:url(../images/dots-1.png) repeat-x left bottom}
 .item-cart-count-link a:hover {background:none}
 .item-cart-submit {float:left; width:100%; z-index:2; margin-top:-16px; position:relative}
-.item-cart-submit input {vertical-align:top; text-decoration:underline; border:none; background:none; margin:0; padding:0; outline:none; overflow:visible; color:#700a53; font:25px/25px "PT Serif", serif; cursor:pointer}
+.item-cart-submit input {vertical-align:top; text-decoration:underline; border:none; background:none; margin:0; padding:0; outline:none; overflow:visible; color:#700a53; font:25px/25px "Tinos", serif; cursor:pointer}
 .item-cart-submit input:hover {color:#b5744e}
 
 .item-props {font-style:italic; line-height:20px; padding:28px 0 25px 0}
