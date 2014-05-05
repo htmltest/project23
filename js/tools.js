@@ -497,6 +497,22 @@ var timerSlider     = null;
             e.preventDefault();
         });
 
+        // отправка формы заказа звонка
+        $('.header-callback-container form').submit(function(e) {
+            if ($('.header-callback-container input.error').length == 0) {
+                $('.header-callback-container form').append('<div class="header-callback-loading"></div>');
+                $.ajax({
+                    url: $(this).attr('action'),
+                    dataType: 'html',
+                    cache: false
+                }).done(function(html) {
+                    $('.header-callback-container').html(html);
+                });
+            }
+
+            e.preventDefault();
+        });
+
         // галерея
         $('.item-photo').on('click', '.mousetrap', function() {
             var windowWidth     = $(window).width();
@@ -586,6 +602,12 @@ var timerSlider     = null;
             }
             $('.item-gallery-list ul li').eq(curIndex).find('a').click();
 
+            e.preventDefault();
+        });
+
+        // пример отображения загрузки новой капчи
+        $('.form-captcha-new a').click(function(e) {
+            $(this).parent().parent().find('.form-captcha-img span').css({'display': 'block'});
             e.preventDefault();
         });
 

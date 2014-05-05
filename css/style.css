@@ -83,7 +83,7 @@ nav ul li.active a {color:#444}
 .header-callback-content-top {height:25px; background:url(../images/header-cart-content.png) -338px top}
 .header-callback-content-middle {background:url(../images/header-cart-content.png)}
 .header-callback-container {width:255px; margin:0 auto; text-align:left; padding:15px 0 16px 0}
-.header-callback-container form {margin:0; padding:0}
+.header-callback-container form {margin:0; padding:0; position:relative}
 .header-callback-container .form-input input {width:233px}
 .header-callback-container .form-input input.callback-phone-country {width:17px; text-align:center; margin:0 5px 0 0}
 .header-callback-container .form-input input.callback-phone-country+label.error {display:none !important}
@@ -91,6 +91,7 @@ nav ul li.active a {color:#444}
 .header-callback-container .form-input input.callback-phone-code+label.error {display:none !important}
 .header-callback-container .form-input input.callback-phone {width:121px; margin:0}
 .header-callback-content-bottom {height:25px; background:url(../images/header-cart-content.png) -676px top}
+.header-callback-loading {position:absolute; left:0; top:0; width:100%; height:100%; background:#fff url(../images/fancybox_loading.gif) no-repeat center; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
 
 .form-label {padding:0 0 7px 0}
 .form-label span {color:#b5744e}
@@ -119,7 +120,8 @@ nav ul li.active a {color:#444}
 .form-file input {height:200px; position:absolute; top:0; right:0; opacity:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor:pointer; font-size:200px; background:url(../images/blank.gif)}
 .form-select {width:268px; padding:0 0 12px 0}
 .form-select select {width:100%}
-.form-captcha-img {float:left; line-height:0; margin:-5px 0 0 0}
+.form-captcha-img {float:left; line-height:0; margin:-5px 0 0 0; position:relative}
+.form-captcha-img span {display:none; position:absolute; left:0; top:0; width:100%; height:100%; background:#fff url(../images/fancybox_loading.gif) no-repeat center; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
 .form-captcha-new {float:left; line-height:0; padding:6px 13px 0 4px}
 .form-input input.form-captcha-input {width:116px}
 .form-col-right .form-input input.form-captcha-input {margin:0}
@@ -128,8 +130,8 @@ nav ul li.active a {color:#444}
 .form-submit input {float:left; vertical-align:top; border:none; margin:0; padding:0 20px; outline:none; overflow:visible; background:#700a53; color:#fff; height:44px; font:19px/40px "PT Serif", serif; cursor:pointer}
 .form-submit input:hover {background:#9b0e74}
 .form-submit input:active {background:#420631}
-.form-submit input.form-reset {background:none; padding:0; margin:13px 0 0 20px; color:#6e6e6e; font-style:italic; font-size:15px; line-height:19px; height:19px; text-decoration:underline}
-.form-submit input.form-reset:hover {text-decoration:none}
+.form-submit input.form-reset {background:none; padding:0; margin:13px 0 0 20px; color:#6e6e6e; font-style:italic; font-size:15px; line-height:19px; height:20px; border-bottom:1px dashed #6e6e6e}
+.form-submit input.form-reset:hover {border-bottom:none}
 
 .form-cols {width:980px}
 .form-cols:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -496,13 +498,13 @@ footer {width:980px; margin:-174px auto 0 auto; height:174px; position:relative}
 .footer-menu ul li {float:left; margin:0; padding:0 0 0 15px}
 .footer-menu ul li:first-child {padding:0}
 .footer-menu ul li a:hover {color:#757575}
-.footer-social-1 {float:left; width:30px; height:17px; background:url(../images/footer-social-1.png); margin:6px 0 0 0}
+.footer-social-1 {float:left; width:30px; height:17px; background:url(../images/footer-social-1.png); margin:11px 0 0 0}
 .footer-social-1:hover {background-position:left -17px}
-.footer-social-2 {float:left; width:73px; height:15px; background:url(../images/footer-social-2.png); margin:7px 0 0 12px}
+.footer-social-2 {float:left; width:73px; height:15px; background:url(../images/footer-social-2.png); margin:12px 0 0 12px}
 .footer-social-2:hover {background-position:left -15px}
-.footer-social-3 {float:left; width:17px; height:17px; background:url(../images/footer-social-3.png); margin:6px 0 0 14px}
+.footer-social-3 {float:left; width:17px; height:17px; background:url(../images/footer-social-3.png); margin:11px 0 0 14px}
 .footer-social-3:hover {background-position:left -17px}
-.footer-social-4 {float:left; width:21px; height:17px; background:url(../images/footer-social-4.png); margin:6px 0 0 12px}
+.footer-social-4 {float:left; width:21px; height:17px; background:url(../images/footer-social-4.png); margin:11px 0 0 12px}
 .footer-social-4:hover {background-position:left -17px}
 
 .window {position:absolute; left:0; top:0; width:100%; height:100%; z-index:99997; overflow:auto}
@@ -555,3 +557,5 @@ footer {width:980px; margin:-174px auto 0 auto; height:174px; position:relative}
 .item-gallery-list ul {display:inline-block; vertical-align:top; margin:0; padding:0; list-style:none}
 .item-gallery-list ul li {display:inline-block; vertical-align:middle; margin:0; padding:0 6px; background:none; position:relative}
 .item-gallery-list ul li.active img {position:relative; -webkit-box-shadow:0 0 13px rgba(0, 0, 0, .2); -moz-box-shadow:0 0 13px rgba(0, 0, 0, .2); box-shadow:0 0 13px rgba(0, 0, 0, .2); behavior:url(./js/PIE.htc)}
+
+.callback-success {text-align:center; font-size:19px; line-height:21px; font-weight:bold; padding:15px 0}
