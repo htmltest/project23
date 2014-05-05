@@ -497,6 +497,98 @@ var timerSlider     = null;
             e.preventDefault();
         });
 
+        // галерея
+        $('.item-photo').on('click', '.mousetrap', function() {
+            var windowWidth     = $(window).width();
+            var windowHeight    = $(window).height();
+            var curScrollTop    = $(window).scrollTop();
+
+            $('body').css({'width': windowWidth, 'height': windowHeight, 'overflow': 'hidden'});
+            $(window).scrollTop(0);
+            $('.wrapper').css({'top': -curScrollTop});
+            $('footer').css({'top': -curScrollTop});
+            $('.wrapper').data('scrollTop', curScrollTop);
+
+            $('.item-gallery').addClass('item-gallery-open');
+        });
+
+        $('.item-gallery-close').click(function(e) {
+            itemGalleryClose();
+            e.preventDefault();
+        });
+
+        $('body').keyup(function(e) {
+            if (e.keyCode == 27) {
+                itemGalleryClose();
+            }
+        });
+
+        function itemGalleryClose() {
+            if ($('.item-gallery-open').length > 0) {
+                $('.wrapper').css({'top': 'auto', 'left': 'auto'});
+                $('footer').css({'top': 'auto'});
+                $('body').css({'width': 'auto', 'height': '100%', 'overflow': 'visible'});
+                $(window).scrollTop($('.wrapper').data('scrollTop'));
+
+                $('.item-gallery').removeClass('item-gallery-open');
+            }
+        }
+
+        $(window).bind('load resize', function() {
+            var windowHeight    = $(window).height();
+            var contentHeight   = windowHeight - ($('.item-gallery-content').height() + 30);
+            $('.item-gallery-big').css({'height': contentHeight, 'line-height': contentHeight + 'px'});
+            $('.item-gallery-big img').css({'max-height': contentHeight});
+        });
+
+        $('.item-gallery-link a').click(function(e) {
+            $.ajax({
+                url: $(this).attr('href'),
+                dataType: 'html',
+                cache: false
+            }).done(function(html) {
+                itemGalleryClose();
+                windowOpen(html);
+            });
+
+            e.preventDefault();
+        });
+
+        $('.item-gallery-list ul li a').click(function(e) {
+            var curLi = $(this).parent();
+
+            if (!curLi.hasClass('active')) {
+                var curIndex = $('.item-gallery-list ul li').index(curLi);
+                $('.item-gallery-big img').attr('src', $(this).attr('href'));
+                $('.item-gallery-list ul li.active').removeClass('active');
+                curLi.addClass('active');
+            }
+
+            e.preventDefault();
+        });
+
+        $('.item-gallery-prev').click(function(e) {
+            var curIndex = $('.item-gallery-list ul li').index($('.item-gallery-list ul li.active'));
+            curIndex--;
+            if (curIndex < 0) {
+                curIndex = $('.item-gallery-list ul li').length - 1;
+            }
+            $('.item-gallery-list ul li').eq(curIndex).find('a').click();
+
+            e.preventDefault();
+        });
+
+        $('.item-gallery-next').click(function(e) {
+            var curIndex = $('.item-gallery-list ul li').index($('.item-gallery-list ul li.active'));
+            curIndex++;
+            if (curIndex >= $('.item-gallery-list ul li').length) {
+                curIndex = 0;
+            }
+            $('.item-gallery-list ul li').eq(curIndex).find('a').click();
+
+            e.preventDefault();
+        });
+
     });
 
     // открытие окна

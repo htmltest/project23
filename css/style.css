@@ -532,3 +532,26 @@ footer {width:980px; margin:-174px auto 0 auto; height:174px; position:relative}
 .basket-other-item-text {float:right; width:125px; font-style:italic}
 .basket-other-item-name {font-size:17px; line-height:19px; padding:1px 0 0 0}
 .basket-other-item-price {font-size:20px; line-height:20px; font-weight:bold; padding:9px 0 0 0}
+
+.item-gallery {position:fixed; left:-9999px; top:0; width:100%; height:100%; z-index:99997; overflow:auto; background:#000; background:rgba(0, 0, 0, .87)}
+.item-gallery-open {left:0}
+.item-gallery-container {position:absolute; z-index:99999; left:0; top:0; width:100%; height:100%}
+.item-gallery-big {text-align:center; line-height:0; padding:30px 0 0 0; position:relative}
+.item-gallery-big span {position:relative; display:inline-block}
+.item-gallery-prev,
+.item-gallery-next {display:block; width:78px; height:147px; position:absolute; top:50%; margin-top:-44px; background:url(../images/item-gallery-arrows.png)}
+.item-gallery-prev {left:100px}
+.item-gallery-prev:hover {background-position:left -147px}
+.item-gallery-next {right:100px; background-position:-78px top}
+.item-gallery-next:hover {background-position:-78px -147px}
+.item-gallery-close {display:block; position:absolute; right:-57px; top:0; width:27px; height:25px; background:url(../images/item-gallery-close.png)}
+.item-gallery-big img {vertical-align:middle; position:relative; -webkit-box-shadow:0 0 13px rgba(0, 0, 0, .2); -moz-box-shadow:0 0 13px rgba(0, 0, 0, .2); box-shadow:0 0 13px rgba(0, 0, 0, .2); behavior:url(./js/PIE.htc)}
+.item-gallery-text {width:580px; text-align:center; font-style:italic; color:#fff; font-size:13px; line-height:18px; padding:23px 0 0 0; margin:0 auto}
+.item-gallery-link {text-align:center; padding:26px 0 0 0}
+.item-gallery-link a {display:inline-block; vertical-align:top; font-size:19px; line-height:44px; text-decoration:none; color:#fff; height:44px; padding:0 20px; background:#700a53}
+.item-gallery-link a:hover {background:#9b0e74}
+.item-gallery-link a:active {background:#420631}
+.item-gallery-list {text-align:center; line-height:0; font-size:0; letter-spacing:-1px; white-space:nowrap; padding:30px 0}
+.item-gallery-list ul {display:inline-block; vertical-align:top; margin:0; padding:0; list-style:none}
+.item-gallery-list ul li {display:inline-block; vertical-align:middle; margin:0; padding:0 6px; background:none; position:relative}
+.item-gallery-list ul li.active img {position:relative; -webkit-box-shadow:0 0 13px rgba(0, 0, 0, .2); -moz-box-shadow:0 0 13px rgba(0, 0, 0, .2); box-shadow:0 0 13px rgba(0, 0, 0, .2); behavior:url(./js/PIE.htc)}
