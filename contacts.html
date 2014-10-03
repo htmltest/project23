@@ -10,10 +10,14 @@
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Tinos:400,400italic,700,700italic&subset=latin,cyrillic" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/cusel.css" />
+        <link rel="stylesheet" href="css/cloud-zoom.css" />
         <link rel="stylesheet" href="css/print.css" media="print" />
 
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
+        <script src="js/cusel-fixed-min-2.5.js"></script>
+        <script src="js/cloud-zoom.1.0.3.min.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1280" />
@@ -28,7 +32,7 @@
                 <header>
                     <div class="header-inner">
 
-                        <div class="logo"><img src="images/logo.png" alt="" width="166" height="52" /></div>
+                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="166" height="52" /></a></div>
 
                         <!-- header search -->
                         <div class="header-search">
@@ -48,7 +52,7 @@
                                 <li><a href="#">Интересно о шелке</a></li>
                                 <li><a href="#">О компании</a></li>
                                 <li><a href="#">Партнеры в СПБ и Киеве</a></li>
-                                <li><a href="#">Контакты</a></li>
+                                <li class="active"><a href="#">Контакты</a></li>
                             </ul>
                         </nav>
 
@@ -56,8 +60,45 @@
                         <div class="header-cart">
                             <div class="header-cart-inner">
                                 <img src="images/header-cart.png" alt="" width="15" height="12" />
-                                <div class="header-cart-text">В корзине пока пусто :(</div>
+                                <div class="header-cart-text">В корзине</div>
+                                <div class="header-cart-info">
+                                    <a href="#" class="header-cart-info-link">2 товара на 2545 рублей</a>
+                                    <div class="header-cart-content">
+                                        <div class="header-cart-content-top"></div>
+                                        <div class="header-cart-content-middle">
+                                            <div class="header-cart-container">
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-1.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Тафта полоска</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">3 м.п.</div>
+                                                            <div class="header-cart-item-summ">3771 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart-item">
+                                                    <div class="header-cart-item-img"><img src="files/header-cart-item-2.jpg" alt="" width="25" height="25" /></div>
+                                                    <div class="header-cart-item-text">
+                                                        <div class="header-cart-item-name"><a href="#">Жаккард цветной</a></div>
+                                                        <div class="header-cart-item-row">
+                                                            <div class="header-cart-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
+                                                            <div class="header-cart-item-count">1 м.п.</div>
+                                                            <div class="header-cart-item-summ">1269 <span class="rubl">&#8399;</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="header-cart-summ">5040 <span class="rubl">&#8399;</span></div>
+                                                <div class="header-cart-link"><a href="#">Оформить</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="header-cart-content-bottom"></div>
+                                    </div>
+                                </div>
                             </div>
+                            <a href="#">Оформить</a>
                         </div>
                         <!-- header cart END -->
 
@@ -99,8 +140,8 @@
                 <div class="breadcrumbs">
                     <div class="breadcrumbs-container">
                         <div class="breadcrumbs-content">
-                            <a href="#">Главная страница</a> &nbsp; / &nbsp;
-                            Результаты поиска
+                            <a href="#">Магазин шёлка</a> &nbsp; / &nbsp;
+                            Контакты
                         </div>
                     </div>
                 </div>
@@ -109,84 +150,75 @@
                 <!-- container -->
                 <div class="container">
                     <div class="content">
-                        <h1>Вы искали <strong><em>«шёлк».</em></strong> И вот, что у нас есть:</h1>
+                        <h1>Контактная информация</h1>
+
+                        <div class="contacts-discount">Чтобы получить <strong>6% скидку</strong> (на товары со скидкой и оптовые цены скидка не распостраняется)<br />на весь ассортимент в наших розничных магазинах распечатайте этот <a href="#"><strong>купон</strong></a>.</div>
+
+                        <div class="contacts-cols">
+                            <div class="contacts-col">
+                                <p>Магазин-склад "Натуральный Шелк":</p>
+                                <p>тел. <strong>+7 (499) 579-30-03, 579-30-12, 579-30-13</strong></p>
+                                <p><strong>Часы работы:</strong><br />понедельник - суббота 10:00 - 21:00,<br />воскресенье 10:00 - 19:00</p>
+                                <p>г. Москва, м. Павелецкая, ул. Кожевническая д. 7,<br />т/ц "Громада", 2 этаж, налево.</p>
+                            </div>
+
+                            <div class="contacts-col">
+                                <p><strong>Магазин в Киеве:</strong><br />ул.Артёма, 37/41, 1 этаж,<br />+380 (67) 504-55-94</p>
+                                <p><strong>Санкт-Петербург:</strong><br />+7 (812) 529-6471, +7 (911) 931-2121 (мобильный)<br />Ольга Степанова</p>
+                                <p><strong>Екатеринбург:</strong><br />+7 (912) 601-06-60<br />Тарасенко Юлия Михайловна.</p>
+                            </div>
+                        </div>
+
+                        <div class="contacts-map-title">Схема проезда:</div>
+
+                        <div class="contacts-map">
+                            <div id="map"></div>
+                            <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                ymaps.ready(init);
+
+                                var myMap;
+
+                                function init () {
+                                    myMap = new ymaps.Map('map', {
+                                        center: [56.136, 40.390],
+                                        zoom: 15
+                                    });
+
+                                    var myGeocoder = ymaps.geocode('г. Москва, м. Павелецкая, ул. Кожевническая д. 7');
+                                    myGeocoder.then(
+                                        function (res) {
+                                            var coords = res.geoObjects.get(0).geometry.getCoordinates();
+                                            myPlacemark = new ymaps.Placemark(coords, {}, {
+                                                iconImageHref: 'images/map-icon.png',
+                                                iconImageSize: [126, 60],
+                                                iconImageOffset: [-36, -60]
+                                            });
+                                            myMap.geoObjects.add(myPlacemark);
+                                            myMap.setCenter(coords);
+                                            var position = myMap.getGlobalPixelCenter();
+                                            myMap.setGlobalPixelCenter([ position[0] - 260, position[1] ]);
+                                        },
+                                        function (err) {
+                                            alert('Ошибка');
+                                        }
+                                    );
+
+                                }
+                            </script>
+
+                            <div class="contacts-map-content">
+                                <div class="contacts-map-content-img"><img src="files/map-photo.jpg" alt="" width="210" height="212" /></div>
+                                <div class="contacts-map-content-phone">+7 (499) 579-30-03</div>
+                                <div class="contacts-map-content-address">м. Павелецкая, ул. Кожевническая д. 7</div>
+                                <div class="contacts-map-content-title">Как пройти</div>
+                                <div class="contacts-map-content-how">От станции м. Павелецкая пройдите до Кожевнической улицы. По ней до центра Громада. Наш магазин находится на втором этаже, слева.</div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
                 <!-- container END -->
-
-                <!-- main -->
-                <div class="main">
-                    <div class="main-inner">
-                        <div class="main-other">
-                            <div class="catalogue">
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-01.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">00000845</div>
-                                    <div class="catalogue-name">Жаккард цветной</div>
-                                    <div class="catalogue-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-07.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">573875</div>
-                                    <div class="catalogue-name">Жаккард шанжановый</div>
-                                    <div class="catalogue-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-03.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">0003466</div>
-                                    <div class="catalogue-name">Тафта полоска</div>
-                                    <div class="catalogue-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-02.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">436987</div>
-                                    <div class="catalogue-name">Шандунг с вышивкой</div>
-                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/catalogue-06.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art"></div>
-                                    <div class="catalogue-name">Шелковый репс</div>
-                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-04.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">436987</div>
-                                    <div class="catalogue-name">Шандунг с вышивкой</div>
-                                    <div class="catalogue-price"><strong>3225 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-05.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">4358923</div>
-                                    <div class="catalogue-name">Шелковый репс</div>
-                                    <div class="catalogue-price"><strong>2551 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-01.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">00000845</div>
-                                    <div class="catalogue-name">Жаккард цветной</div>
-                                    <div class="catalogue-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="catalogue-img"><img src="files/main-best-07.jpg" alt="" width="200" height="200" /></div>
-                                    <div class="catalogue-art">573875</div>
-                                    <div class="catalogue-name">Жаккард шанжановый</div>
-                                    <div class="catalogue-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- main END -->
 
                 <!-- bottom -->
                 <div class="bottom">

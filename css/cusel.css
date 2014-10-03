@@ -18,3 +18,10 @@
 .cusel .jScrollArrowDown {width:16px !important; height:16px; position:absolute; top:auto; bottom:0; right:0; cursor:pointer; background:url(../images/select-arrow.png) no-repeat left -15px; overflow:hidden}
 
 .cusel-iPad .cusel-scroll-pane {height:150px; overflow-y:auto !important}
+
+.item-cart-count .cusel,
+.item-cart-count .cuselFrameRight {background-image:url(../images/select-item.png)}
+.item-cart-count .cusel {height:35px; line-height:35px}
+.item-cart-count .cuselFrameRight {height:35px}
+.item-cart-count .cuselText {height:35px}
+.item-cart-count .cusel .cusel-scroll-wrap {top:34px}
