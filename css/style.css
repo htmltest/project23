@@ -41,12 +41,12 @@ header {position:relative; z-index:10}
 .page-404-text-2 {font-size:19px; line-height:23px; font-style:italic; padding:20px 0 0 0}
 .page-404-text-3 {font-style:italic; color:#878787; padding:12px 0 0 0}
 
-nav {position:absolute; left:-8px; top:159px; width:1016px; font-size:15px; line-height:25px; white-space:nowrap}
-nav ul {display:table; width:100%; margin:0; padding:0; list-style:none}
-nav ul li {display:table-cell; margin:0; padding:0; height:25px}
-nav ul li a {display:inline-block; vertical-align:top; margin:0 8px}
+nav {position:absolute; left:-8px; top:159px; width:1016px; font-size:15px; line-height:25px; white-space:nowrap; text-align:center}
+nav ul {display:inline-block; margin:0; padding:0; list-style:none}
+nav ul li {float:left; margin:0; padding:0; height:25px}
+nav ul li a {display:inline-block; vertical-align:top; margin:0 9px}
 nav ul li a:hover {color:#b6724d}
-nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin:0; padding:0 8px}
+nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin:0; padding:0 9px}
 
 .header-cart {position:absolute; left:24px; top:89px; font-size:14px; line-height:17px}
 .header-cart-inner {position:relative; z-index:2}
@@ -268,11 +268,10 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .page-content .main-title {padding:46px 0 0 0}
 .main-title-other {padding:0 0 44px 0}
 
-.main-categories {text-align:left; background:url(../images/main-categories-bg.png) no-repeat center bottom; padding:0 0 47px 0}
-.main-categories-list {max-width:1160px; margin:0 auto; font-size:0; line-height:0; letter-spacing:-1px; padding:0 0 30px 0}
-.main-categories-col {display:inline-block; vertical-align:top; font-size:17px; line-height:20px; letter-spacing:0; padding:0 17px}
-.main-categories-item {padding:30px 0 0 0; text-align:left}
-.main-categories-item a {display:table}
+.main-categories {background:url(../images/main-categories-bg.png) no-repeat center bottom; padding:0 0 47px 0}
+.main-categories-list {max-width:1260px; margin:0 auto; font-size:0; line-height:0; letter-spacing:-1px; padding:0 0 30px 0; text-align:center}
+.main-categories-item {padding:30px 17px 0 17px; display:inline-block; vertical-align:top; font-size:17px; line-height:20px; letter-spacing:0; width:220px; text-align:left}
+.main-categories-item a {display:table; width:100%}
 .main-categories-item a:hover {color:#b5744e}
 .main-categories-icon {display:table-cell; width:54px; line-height:0; vertical-align:middle}
 .main-categories-name {display:table-cell; height:42px; vertical-align:middle}
@@ -295,7 +294,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .main-best-item-inner {position:absolute; left:0; top:0; display:none; width:200px}
 .main-best-old .main-best-item-inner {width:100px}
 .main-best-item:hover .main-best-item-inner {display:table}
-.main-best-item-content {display:table-cell; height:200px; vertical-align:middle; text-align:center}
+.main-best-item-content {display:table-cell; height:200px; vertical-align:middle; text-align:center; word-break:break-all}
 .main-best-old .main-best-item-content {height:100px}
 .main-best-item-name {font-size:20px; padding:0 15px}
 .main-best-old .main-best-item-name {font-size:12px; line-height:14px}
@@ -304,7 +303,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 
 .main-analog {background:url(../images/main-analog.png) no-repeat center bottom; padding:0 0 105px 0}
 
-.main-analog-menu {text-align:center; font-size:0; line-height:0; letter-spacing:-1px; padding:27px 0 0 0}
+.main-analog-menu {text-align:center; font-size:0; line-height:0; letter-spacing:-1px; padding:27px 0 0 0; white-space:nowrap}
 .main-analog-menu ul {margin:0; padding:0; list-style:none; display:inline-block; vertical-align:top}
 .main-analog-menu ul li {display:inline-block; vertical-align:top; padding:0 10px; height:22px; margin:0 5px; font-style:italic; font-size:13px; line-height:22px; letter-spacing:0}
 .main-analog-menu ul li a {color:#4b4b4b}
@@ -324,16 +323,16 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .main-other .main-title {padding:0 0 31px 0}
 
 .catalogue {position:relative; margin:0 0 0 -40px; font-size:0; line-height:0; letter-spacing:-1px}
-.catalogue-item {display:inline-block; width:200px; vertical-align:top; margin:0 0 37px 40px}
-.catalogue-item-fast {position:relative; text-decoration:none; font-style:italic; text-align:center}
+.catalogue-item {display:inline-block; width:200px; vertical-align:top; margin:0 0 37px 40px; text-align:center; font-style:italic}
 .main .catalogue a {display:inline-block; width:200px; vertical-align:top; margin:0 0 37px 40px; position:relative; text-decoration:none; font-style:italic; text-align:center}
 .catalogue-img {position:relative; width:100%; overflow:hidden}
-.catalogue-img span {display:none; position:absolute; left:17px; bottom:9px; width:166px; height:30px; background:#700a53; text-align:center; color:#fff; font-weight:bold; font-size:15px; line-height:30px; letter-spacing:0}
-.catalogue-item-fast:hover .catalogue-img span {display:block}
+.catalogue-item-fast {display:none; position:absolute; left:17px; bottom:9px; width:166px; height:30px; background:#700a53; text-decoration:none; text-align:center; color:#fff; font-weight:bold; font-size:15px; line-height:30px; letter-spacing:0}
+.catalogue-item:hover .catalogue-item-fast {display:block}
 .catalogue-art {font-size:13px; line-height:17px; min-height:17px; color:#4b4b4b; letter-spacing:0; padding:16px 0 0 0}
-.catalogue-name {font-size:17px; line-height:19px; letter-spacing:0; text-decoration:underline}
+.catalogue-name {font-size:17px; line-height:19px; letter-spacing:0}
+.main .catalogue a .catalogue-name {text-decoration:underline}
 .main .catalogue a:hover .catalogue-name,
-.catalogue-item-fast:hover .catalogue-name {color:#b5744e; text-decoration:none}
+.catalogue-name a:hover {color:#b5744e; text-decoration:none}
 .catalogue-price {font-size:25px; line-height:27px; letter-spacing:0; padding:4px 0 0 0; color:#000}
 .catalogue-price img {vertical-align:top; position:relative; top:1px; margin:0 2px 0 0}
 .catalogue-item-buy {text-align:center; font-size:13px; line-height:17px; letter-spacing:0; font-style:italic; padding:4px 0 0 0}
@@ -361,7 +360,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .page-menu ul li {margin:0; padding:0 0 5px 0; background:none}
 .page-menu ul li ul {font-size:13px; padding:6px 0 0 12px; margin:0 0 -3px 0}
 .page-menu ul li ul li {padding:0 0 2px 23px; background:url(../images/page-menu.png) no-repeat left 10px}
-.page-menu li.active a,
+.page-menu li.active > a,
 .page-menu a:hover {color:#b5744e}
 
 .page-filter {font-size:14px; background:url(../images/catalogue-sep.png) no-repeat -22px 2px; padding:0 0 24px 0}
@@ -686,19 +685,23 @@ footer {margin-top:-167px; height:140px; padding:27px 0 0 0; position:relative; 
 
 .page-noresults {padding:15px 0 0 0}
 
-.catalogue-list {display:table; width:100%}
-.catalogue-list-header {display:table-row}
+.catalogue-list-header {display:table; width:100%; position:relative; margin:42px 0 -84px 0; table-layout:fixed}
 .catalogue-list-head {display:table-cell; border-bottom:1px solid #e2e2e2; font-style:italic; font-size:13px; text-align:center; color:#4b4b4b; padding:10px 0 12px 0}
+.catalogue-list-head-1 {width:45px}
+.catalogue-list-head-2 {width:128px}
+.catalogue-list-head-3 {width:102px}
 .catalogue-list-head a {text-decoration:none; color:#4b4b4b}
 .catalogue-list-head a:hover {color:#700a53}
 .catalogue-list-head img {vertical-align:middle; margin:0 0 0 2px}
+
+.catalogue-list {display:table; width:100%; margin:42px 0 0 0; table-layout:fixed}
 .catalogue-list-item {display:table-row}
-.catalogue-list-item-col {display:table-cell; vertical-align:middle; border-bottom:1px solid #e2e2e2; font-style:italic; text-align:center; padding:20px 5px; width:15%}
+.catalogue-list-item-col {display:table-cell; vertical-align:middle; border-bottom:1px solid #e2e2e2; font-style:italic; text-align:center; padding:20px 5px; width:92px}
 .catalogue-list-item-col-img {width:45px; line-height:0; padding:20px 0}
 .catalogue-list-item-col-img a {position:relative; display:block; width:45px}
 .catalogue-list-item-col-img a div {position:absolute; right:-9px; top:-2px}
 .catalogue-list-item-col-img a div img {position:relative; display:block; margin:0 0 -8px 0}
-.catalogue-list-item-col-name {line-height:18px; color:#436987}
+.catalogue-list-item-col-name {line-height:18px; color:#436987; width:118px}
 .catalogue-list-item-col-name span {display:block; font-size:12px; padding:4px 0 0 0}
 .catalogue-list-item-col-2 {font-size:12px; line-height:13px}
 .catalogue-list-item-col-3 {font-size:13px; line-height:13px}
@@ -722,3 +725,15 @@ footer {margin-top:-167px; height:140px; padding:27px 0 0 0; position:relative; 
 .contacts-map-content-address {font-size:14px; line-height:17px}
 .contacts-map-content-title {font-size:17px; line-height:19px; font-weight:bold; padding:17px 0 0 0}
 .contacts-map-content-how {font-size:13px; line-height:19px}
+
+.loading {display:none; position:absolute; left:0; top:0; width:100%; height:100%}
+.loading-bg {position:absolute; left:0; top:0; width:100%; height:100%; background:#fff; opacity:.75; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75)}
+.loading-inner {position:absolute; left:50%; top:50%; width:220px; height:125px; margin:-62px 0 0 -110px; background:#f8fbfc}
+.loading-img {text-align:center; line-height:0; margin:30px auto 0 auto; width:32px; height:32px; background:#fff url(../images/loading.gif)}
+.loading-text {text-align:center; padding:18px 0 0 0; color:#000}
+
+.window-form {width:686px}
+.window-form form {margin:24px auto 0 auto; padding:0 0 35px 0}
+
+.form-success {padding:30px; width:626px}
+.form-error {padding:30px; width:626px; color:#f00}

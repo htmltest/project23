@@ -732,7 +732,7 @@ var timerSlider     = null;
         });
 
         // быстрый просмотр
-        $('.catalogue-item-fast, .catalogue-list-item-col-name a, .catalogue-list-item-col-img').click(function(e) {
+        $('.catalogue-item-fast').click(function(e) {
             $.ajax({
                 url: $(this).attr('href'),
                 dataType: 'html',
@@ -892,8 +892,76 @@ var timerSlider     = null;
         });
 
         // пример отображения загрузки новой капчи
-        $('.form-captcha-new a').click(function(e) {
+        $('.form-captcha-new a').live('click', function(e) {
             $(this).parent().parent().find('.form-captcha-img span').css({'display': 'block'});
+            e.preventDefault();
+        });
+
+        // окно с формой
+        $('.window-link').click(function(e) {
+            $.ajax({
+                url: $(this).attr('href'),
+                dataType: 'html',
+                cache: false
+            }).done(function(html) {
+                windowOpen(html);
+
+                $('.window .form-checkbox span input:checked').parent().addClass('checked');
+                $('.window .form-checkbox').click(function() {
+                    $(this).find('span').toggleClass('checked');
+                    $(this).find('input').prop('checked', $(this).find('span').hasClass('checked')).trigger('change');
+                    if ($(this).parents().filter('.page-filter').length > 0) {
+                        updateFilter();
+                    }
+                });
+
+                $('.window .form-radio span input:checked').parent().addClass('checked');
+                $('.window .form-radio').click(function() {
+                    var curName = $(this).find('input').attr('name');
+                    $('.window .form-radio input[name="' + curName + '"]').parent().removeClass('checked');
+                    $(this).find('span').addClass('checked');
+                    $(this).find('input').prop('checked', true).trigger('change');
+                });
+
+                if ($('.window .form-select').length > 0) {
+                    var params = {
+                        changedEl: '.window .form-select select',
+                        visRows: 5,
+                        scrollArrows: true
+                    }
+                    cuSel(params);
+                }
+
+                $('.window .form-file input').change(function() {
+                    $(this).parent().find('span').html($(this).val());
+                });
+
+                $('.window .form-submit input[type="reset"]').click(function() {
+                    var curForm = $(this).parents().filter('form');
+                    window.setTimeout(function() {
+                        curForm.find('.form-checkbox span').removeClass('checked');
+                        curForm.find('.form-checkbox span input:checked').parent().addClass('checked');
+                        curForm.find('.form-radio span').removeClass('checked');
+                        curForm.find('.form-radio span input:checked').parent().addClass('checked');
+                        curForm.find('.form-file span').html('');
+                    }, 100);
+                });
+
+                $('.window form').validate({
+                    submitHandler: function(form) {
+                        $('.window .loading').show();
+                        $.ajax({
+                            url: $(form).attr('action'),
+                            dataType: 'html',
+                            cache: false
+                        }).done(function(html) {
+                            windowClose();
+                            windowOpen(html);
+                        });
+                    }
+                });
+            });
+
             e.preventDefault();
         });
 

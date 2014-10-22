@@ -1,0 +1,58 @@
+<div class="content window-form">
+    <h2>Обратная связь</h2>
+    <form action="windows/form-success.html" method="post">
+        <div class="form-label">Представьтесь, пожалуйста:</div>
+        <div class="form-input"><input type="text" name="name" value="" /></div>
+        <div class="form-label">Электронная почта: <span>*</span></div>
+        <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
+        <div class="form-label">Текстовое поле: <span>*</span></div>
+        <div class="form-input"><textarea name="text" rows="5" cols="10" class="required">Деградация эксперментально верифицируема. Микрозападина едва ли квантуема. Фронт, как бы это ни казалось парадоксальным, теоретически возможен. Можно думать, что температуропроводность перманентно отражает коллоид, все дальнейшее далеко выходит за рамки текущего исследования и не будет здесь рассматриваться.</textarea></div>
+        <div class="form-row">
+            <div class="form-row-inner">
+                <div class="form-checkbox"><span><input type="checkbox" name="checkbox1" /></span>Один</div>
+                <div class="form-checkbox"><span><input type="checkbox" name="checkbox2" checked="checked" /></span>Два или три</div>
+                <div class="form-checkbox"><span><input type="checkbox" name="checkbox3" checked="checked" /></span>Четыре</div>
+            </div>
+        </div>
+        <div class="form-label">Выберите из списка:</div>
+        <div class="form-select">
+            <select name="select1" id="select1">
+                <option value="1">Хлопок</option>
+                <option value="2">Шёлк</option>
+                <option value="3">Микрофибра</option>
+                <option value="4">Бархат</option>
+                <option value="5">Вуаль</option>
+                <option value="6">Какая-то другая ткань</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <div class="form-row-inner">
+                <div class="form-radio"><span><input type="radio" name="radio1" value="1" checked="checked" /></span>Один</div>
+                <div class="form-radio"><span><input type="radio" name="radio1" value="2" /></span>Два или три</div>
+            </div>
+        </div>
+        <div class="form-label">Вложите файл:</div>
+        <div class="form-file">
+            <div class="form-file-text"><span></span></div>
+            <div class="form-file-btn">Обзор...</div>
+            <input type="file" name="file" />
+        </div>
+        <div class="form-label">Введите слово с картинки:</div>
+        <div class="form-input">
+            <div class="form-captcha-img"><img src="files/captcha.jpg" alt="" width="109" height="39" /><span></span></div>
+            <div class="form-captcha-new"><a href="#"><img src="images/captcha-new.png" alt="" width="16" height="16" /></a></div>
+            <input type="text" name="captcha" value="" class="form-captcha-input required" />
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="Отправить сообщение" />
+            <input type="reset" value="Очистить форму" class="form-reset" />
+        </div>
+    </form>
+    <div class="loading">
+        <div class="loading-bg"></div>
+        <div class="loading-inner">
+            <div class="loading-img"></div>
+            <div class="loading-text">Отправка данных</div>
+        </div>
+    </div>
+</div>
