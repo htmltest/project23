@@ -733,12 +733,30 @@ var timerSlider     = null;
 
         // быстрый просмотр
         $('.catalogue-item-fast').click(function(e) {
+            var curIndex = $('.catalogue-item-fast').index($(this));
+            $('.catalogue-item-fast').removeClass('active');
+            $(this).addClass('active');
             $.ajax({
                 url: $(this).attr('href'),
                 dataType: 'html',
                 cache: false
             }).done(function(html) {
+                if ($('.window').length > 0) {
+                    windowClose();
+                }
                 windowOpen(html);
+                var prevIndex = curIndex - 1;
+                if (prevIndex < 0) {
+                    prevIndex = $('.catalogue-item-fast').length - 1;
+                }
+                $('.item-fast-prev').attr('href', $('.catalogue-item-fast').eq(prevIndex).attr('href')).find('img').attr('src', $('.catalogue-item-fast').eq(prevIndex).attr('rel'));
+
+                var nextIndex = curIndex + 1;
+                if (nextIndex > $('.catalogue-item-fast').length - 1) {
+                    nextIndex = 0;
+                }
+                $('.item-fast-next').attr('href', $('.catalogue-item-fast').eq(nextIndex).attr('href')).find('img').attr('src', $('.catalogue-item-fast').eq(nextIndex).attr('rel'));
+
                 if ($('.window .form-select').length > 0) {
                     var params = {
                         changedEl: '.window .form-select select',
@@ -755,27 +773,23 @@ var timerSlider     = null;
             e.preventDefault();
         });
 
-        $('.item-fast-prev, .item-fast-next').live('click', function(e) {
-            $.ajax({
-                url: $(this).attr('href'),
-                dataType: 'html',
-                cache: false
-            }).done(function(html) {
-                windowClose();
-                windowOpen(html);
-                if ($('.window .form-select').length > 0) {
-                    var params = {
-                        changedEl: '.window .form-select select',
-                        visRows: 5,
-                        scrollArrows: true
-                    }
-                    cuSel(params);
-                }
-                $('.window .cloud-zoom').each(function() {
-                    $(this).CloudZoom();
-                });
-            });
+        $('.item-fast-prev').live('click', function(e) {
+            var curIndex = $('.catalogue-item-fast').index($('.catalogue-item-fast.active'));
+            curIndex--;
+            if (curIndex < 0) {
+                curIndex = $('.catalogue-item-fast').length - 1;
+            }
+            $('.catalogue-item-fast').eq(curIndex).click();
+            e.preventDefault();
+        });
 
+        $('.item-fast-next').live('click', function(e) {
+            var curIndex = $('.catalogue-item-fast').index($('.catalogue-item-fast.active'));
+            curIndex++;
+            if (curIndex > $('.catalogue-item-fast').length - 1) {
+                curIndex = 0;
+            }
+            $('.catalogue-item-fast').eq(curIndex).click();
             e.preventDefault();
         });
 
