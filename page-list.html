@@ -20,6 +20,7 @@
         <script src="js/jquery.nouislider.min.js"></script>
         <script src="js/cusel-fixed-min-2.5.js"></script>
         <script src="js/cloud-zoom.1.0.3.min.js"></script>
+        <script src="js/modernizr.custom.90364.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1280" />
@@ -34,7 +35,7 @@
                 <header>
                     <div class="header-inner">
 
-                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="166" height="52" /></a></div>
+                        <div class="logo"><a href="#"><img src="images/logo.png" alt="" width="251" height="85" /></a></div>
 
                         <!-- header search -->
                         <div class="header-search">
@@ -53,7 +54,6 @@
                                 <li><a href="#">Мастер-классы</a></li>
                                 <li><a href="#">Интересно о шелке</a></li>
                                 <li><a href="#">О компании</a></li>
-                                <li><a href="#">Партнеры в СПБ и Киеве</a></li>
                                 <li><a href="#">Контакты</a></li>
                             </ul>
                         </nav>
@@ -184,9 +184,11 @@
                                                 <div class="page-filter-result-list-shadow"></div>
                                             </div>
                                             <a href="#" class="page-filter-open-link">показать фильтр</a>
+                                            <a href="#" class="page-filter-close-link">скрыть</a>
                                         </div>
 
                                         <form action="#" method="post">
+                                            <div class="page-filter-title"><strong>Выбор ткани</strong> (фильтр)</div>
                                             <div class="page-filter-cols">
                                                 <div class="page-filter-col-1">
                                                     <div class="page-filter-row">
@@ -254,7 +256,7 @@
                                                         <div class="page-filter-field">
                                                             <div class="page-filter-colors">
                                                                 <div class="page-filter-colors-values">
-                                                                    <div class="page-filter-colors-value-not">выбрать цвет</div>
+                                                                    <div class="page-filter-colors-value-not">изменить цвета<span></span></div>
                                                                 </div>
                                                                 <div class="page-filter-colors-list">
                                                                     <div class="page-filter-colors-list-preview">
@@ -263,139 +265,188 @@
                                                                     </div>
                                                                     <div class="page-filter-colors-checkboxes">
                                                                         <div class="page-filter-colors-checkboxes-inner">
-                                                                            <div class="page-filter-color page-filter-color-invert" style="background:#fff; border:1px solid #ccc; width:47px; height:18px; float:none" title="белый">
+                                                                            <div class="page-filter-color page-filter-color-invert" style="background:#fff; border:1px solid #ccc; width:47px; height:18px" title="белый">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="background:#ccc; border-color:#fff; margin-left:-1px; margin-top:-1px"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#969696" title="серый">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#969696"></div>
+                                                                                <sup></sup>
                                                                             </div>
-                                                                            <div class="page-filter-color" style="background:#000; float:none" title="черный">
+
+                                                                            <div class="page-filter-color" style="background:#000" title="черный">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#000"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#fd7e99" title="Умеренный красно-фиолетовый">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#fd7e99"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#fb0007" title="красный">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#fb0007"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#8d000b" title="темно-красный">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#8d000b"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#fed185" title="цвет 1">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#fed185"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#fd8f0b" title="цвет 2">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#fd8f0b"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#976109" title="цвет 3">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#976109"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#f8ff99" title="цвет 4">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#f8ff99"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#ffff0a" title="цвет 5">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#ffff0a"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#ae950c" title="цвет 6">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#ae950c"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#7efd9e" title="цвет 7">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#7efd9e"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#00fb6e" title="цвет 8">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#00fb6e"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#008d37" title="цвет 9">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#008d37"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#85f2fe" title="цвет 10">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#85f2fe"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#0bf9fd" title="цвет 11">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#0bf9fd"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#098a97" title="цвет 12">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#098a97"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#99c8ff" title="цвет 13">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#99c8ff"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#0a8cff" title="цвет 14">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#0a8cff"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#0c7bae" title="цвет 15">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#0c7bae"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#7eaafd" title="цвет 16">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#7eaafd"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#0028fb" title="цвет 17">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#0028fb"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#001e8d" title="цвет 18">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#001e8d"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#c185fe" title="цвет 19">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#c185fe"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#6f0bfd" title="цвет 20">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#6f0bfd"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#4e0997" title="цвет 21">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#4e0997"></div>
+                                                                                <sup></sup>
                                                                             </div>
 
                                                                             <div class="page-filter-color" style="background:#f899ff" title="цвет 22">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#f899ff"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#de0aff" title="цвет 23">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#de0aff"></div>
+                                                                                <sup></sup>
                                                                             </div>
+
                                                                             <div class="page-filter-color" style="background:#7f0cae" title="цвет 24">
                                                                                 <input type="checkbox" name="color[]" />
                                                                                 <div class="page-filter-color-active" style="border-color:#7f0cae"></div>
+                                                                                <sup></sup>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="page-filter-colors-btn"><a href="#">Выбрать</a></div>
+                                                                    <div class="page-filter-colors-btn"><a href="#"></a></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -496,9 +547,8 @@
                                     <!-- catalogue top -->
                                     <div class="catalogue-top">
                                         <div class="catalogue-view">
-                                            <div>Показывать</div>
-                                            <a href="#">Картинками</a>
-                                            <span>Списком</span>
+                                            <a href="#"><img src="images/catalogue-view-img.png" alt="" width="16" height="13" /> Картинки</a>
+                                            <span><img src="images/catalogue-view-list-a.png" alt="" width="12" height="10" /> Список</span>
                                         </div>
 
                                         <div class="pager">
@@ -523,7 +573,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -538,7 +598,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -553,7 +623,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">140 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -568,7 +648,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -583,7 +673,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -598,7 +698,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -613,7 +723,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -628,7 +748,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -643,7 +773,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -658,7 +798,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1269 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -673,7 +823,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1257 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="catalogue-list-item">
@@ -688,7 +848,17 @@
                                             <div class="catalogue-list-item-col catalogue-list-item-col-3">150 см</div>
                                             <div class="catalogue-list-item-col">
                                                 <div class="catalogue-list-item-price"><strong>1472 <span class="rubl">&#8399;</span></strong>/м.п.</div>
-                                                <div class="catalogue-item-buy"><a href="windows/basket.html">купить</a></div>
+                                                <div class="catalogue-item-buy">
+                                                    <a href="#">купить</a>
+                                                    <div class="catalogue-item-buy-form">
+                                                        <form action="windows/basket.html" method="post">
+                                                            <div class="catalogue-item-buy-form-price">3225</div>
+                                                            <div class="form-input"><input type="text" name="count" value="23.9" /><a href="#" class="item-cart-dec"></a><a href="#" class="item-cart-inc"></a></div>
+                                                            <div class="catalogue-item-buy-form-summ"><em>77077,5</em> <span class="rubl">&#8399;</span></div>
+                                                            <div class="form-submit"><input type="submit" value="В корзину" /></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

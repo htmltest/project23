@@ -184,15 +184,33 @@ var timerSlider     = null;
         });
 
         // корзина в шапке
-        $('.header-cart-info-link').click(function(e) {
-            $(this).parent().toggleClass('header-cart-info-open');
-            e.preventDefault();
-        });
+        $('.header-cart').each(function() {
+            if (Modernizr.touch) {
+                $('.header-cart-info-link').click(function(e) {
+                    $(this).parent().toggleClass('header-cart-info-open');
+                    e.preventDefault();
+                });
 
-        $(document).click(function(e) {
-            if ($(e.target).parents().filter('.header-cart-info').length == 0) {
-                $('.header-cart-info-open').removeClass('header-cart-info-open');
+                $(document).click(function(e) {
+                    if ($(e.target).parents().filter('.header-cart-info').length == 0) {
+                        $('.header-cart-info-open').removeClass('header-cart-info-open');
+                    }
+                });
+            } else {
+                $('.header-cart-info-link').click(function(e) {
+                    e.preventDefault();
+                });
+
+                $('.header-cart-info').hover(
+                    function() {
+                        $(this).addClass('header-cart-info-open');
+                    },
+                    function() {
+                        $(this).removeClass('header-cart-info-open');
+                    }
+                );
             }
+
         });
 
         // "Позвоните мне"
@@ -456,19 +474,14 @@ var timerSlider     = null;
                 var curColor = $(this).parent();
                 if (curColor.hasClass('page-filter-color-invert')) {
                     var curColorValue = curColor.find('.page-filter-color-active').css('background-color');
-                    curHTML += '<div class="page-filter-colors-value"><div class="page-filter-colors-value-text"><span style="border-color:' + curColorValue + '; color:' + curColorValue + '">' + curColor.attr('title') + '</span></div><strong style="border-color:' + curColorValue + '; border-width:1px; border-style:solid; width:18px; height:18px"></strong></div>';
+                    curHTML += '<div class="page-filter-colors-value"><div class="page-filter-colors-value-text"><span style="border-color:' + curColorValue + '; color:' + curColorValue + '">' + curColor.attr('title') + '</span></div><strong class="page-filter-color-invert-del" style="border-color:' + curColorValue + '; border-width:1px; border-style:solid; width:18px; height:18px"></strong></div>';
                 } else {
                     var curColorValue = curColor.css('background-color');
                     curHTML += '<div class="page-filter-colors-value"><div class="page-filter-colors-value-text"><span style="border-color:' + curColorValue + '; color:' + curColorValue + '">' + curColor.attr('title') + '</span></div><strong style="background:' + curColorValue + '"></strong></div>';
                 }
             });
             $('.page-filter-colors-list-preview-inner').html(curHTML);
-            $('.page-filter-colors-values').append(curHTML);
-            if (curHTML == '') {
-                $('.page-filter-colors-value-not').show();
-            } else {
-                $('.page-filter-colors-value-not').hide();
-            }
+            $('.page-filter-colors-values').prepend(curHTML);
         }
 
         $('.page-filter-colors-btn a').click(function(e) {
@@ -479,18 +492,17 @@ var timerSlider     = null;
             e.preventDefault();
         });
 
-        $(document).click(function(e) {
-            if ($(e.target).parents().filter('.page-filter-colors').length == 0) {
-                $('.page-filter-colors-open').removeClass('page-filter-colors-open');
-                if ($('.page-filter-colors').data('hasChange')) {
-                    updateFilter();
-                }
-            }
-        });
-
-        $('.page-filter-colors-values').on('click', '.page-filter-colors-value, .page-filter-colors-value-not', function() {
+        $('.page-filter-colors-values').on('click', '.page-filter-colors-value-not', function() {
             $('.page-filter-colors').addClass('page-filter-colors-open');
             $('.page-filter-colors').data('hasChange', false)
+        });
+
+        $('.page-filter-colors').on('click', '.page-filter-colors-value', function() {
+            var curName = $(this).find('.page-filter-colors-value-text span').html();
+            $('.page-filter-color[title="' + curName + '"]').removeClass('checked').find('input').prop('checked', false);
+            $('.page-filter-colors').data('hasChange', true)
+            updateColors();
+            updateFilter();
         });
 
         // очистка фильтра
@@ -704,7 +716,7 @@ var timerSlider     = null;
         });
 
         // отправка товара в корзину
-        $('body').on('submit', '.item-cart form', function(e) {
+        $('body').on('submit', '.item-cart form, .catalogue-item-buy-form form', function(e) {
             $.ajax({
                 url: $(this).attr('action'),
                 dataType: 'html',
@@ -716,16 +728,78 @@ var timerSlider     = null;
             e.preventDefault();
         });
 
-        $('.catalogue-item-buy a').click(function(e) {
-            $.ajax({
-                url: $(this).attr('href'),
-                dataType: 'html',
-                cache: false
-            }).done(function(html) {
-                windowOpen(html);
-            });
-
+        $('.item-cart-dec').click(function(e) {
+            var curItem = $(this).parents().filter('.form-input');
+            var curValue = Number(curItem.find('input').val());
+            curValue -= .1;
+            if (curValue < .1) {
+                curValue = .1;
+            }
+            curItem.find('input').val(curValue.toFixed(1));
+            if (curItem.parents().filter('.catalogue-item-buy-form').length == 1) {
+                var curForm = curItem.parents().filter('.catalogue-item-buy-form');
+                var curSumm = Number(curForm.find('.catalogue-item-buy-form-price').html()) * curValue;
+                curForm.find('.catalogue-item-buy-form-summ em').html(String(curSumm.toFixed(1)).replace('.', ','));
+            }
             e.preventDefault();
+        });
+
+        $('.item-cart-inc').click(function(e) {
+            var curItem = $(this).parents().filter('.form-input');
+            var curValue = Number(curItem.find('input').val());
+            curValue += .1;
+            curItem.find('input').val(curValue.toFixed(1));
+            if (curItem.parents().filter('.catalogue-item-buy-form').length == 1) {
+                var curForm = curItem.parents().filter('.catalogue-item-buy-form');
+                var curSumm = Number(curForm.find('.catalogue-item-buy-form-price').html()) * curValue;
+                curForm.find('.catalogue-item-buy-form-summ em').html(String(curSumm.toFixed(1)).replace('.', ','));
+            }
+            e.preventDefault();
+        });
+
+        $('.item-cart-count input').change(function() {
+            var curItem = $(this);
+            var curValue = Number(curItem.val());
+            if (!curValue || curValue < .1) {
+                curValue = .1;
+            }
+            curItem.val(curValue.toFixed(1));
+            if (curItem.parents().filter('.catalogue-item-buy-form').length == 1) {
+                var curForm = curItem.parents().filter('.catalogue-item-buy-form');
+                var curSumm = Number(curForm.find('.catalogue-item-buy-form-price').html()) * curValue;
+                curForm.find('.catalogue-item-buy-form-summ em').html(String(curSumm.toFixed(1)).replace('.', ','));
+            }
+        });
+
+        $('.catalogue-item-buy-form .form-input input').change(function() {
+            var curItem = $(this);
+            var curValue = Number(curItem.val());
+            if (!curValue || curValue < .1) {
+                curValue = .1;
+            }
+            curItem.val(curValue.toFixed(1));
+            if (curItem.parents().filter('.catalogue-item-buy-form').length == 1) {
+                var curForm = curItem.parents().filter('.catalogue-item-buy-form');
+                var curSumm = Number(curForm.find('.catalogue-item-buy-form-price').html()) * curValue;
+                curForm.find('.catalogue-item-buy-form-summ em').html(String(curSumm.toFixed(1)).replace('.', ','));
+            }
+        });
+
+        $('.catalogue-item-buy > a').click(function(e) {
+            var curItem = $(this).parent();
+            if (curItem.hasClass('catalogue-item-buy-open')) {
+                curItem.removeClass('catalogue-item-buy-open');
+            } else {
+                $('.catalogue-item-buy-open').removeClass('catalogue-item-buy-open');
+                curItem.addClass('catalogue-item-buy-open');
+            }
+            e.preventDefault();
+        });
+
+        $(document).click(function(e) {
+            if ($(e.target).parents().filter('.catalogue-item-buy').length == 0) {
+                $('.catalogue-item-buy-open').removeClass('catalogue-item-buy-open');
+            }
         });
 
         // быстрый просмотр
@@ -765,6 +839,35 @@ var timerSlider     = null;
                 $('.window .cloud-zoom').each(function() {
                     $(this).CloudZoom();
                 });
+
+                $('.window .item-cart-dec').click(function(e) {
+                    var curItem = $(this).parents().filter('.form-input');
+                    var curValue = Number(curItem.find('input').val());
+                    curValue -= .1;
+                    if (curValue < .1) {
+                        curValue = .1;
+                    }
+                    curItem.find('input').val(curValue.toFixed(1));
+                    e.preventDefault();
+                });
+
+                $('.window .item-cart-inc').click(function(e) {
+                    var curItem = $(this).parents().filter('.form-input');
+                    var curValue = Number(curItem.find('input').val());
+                    curValue += .1;
+                    curItem.find('input').val(curValue.toFixed(1));
+                    e.preventDefault();
+                });
+
+                $('.window .item-cart-count input').change(function() {
+                    var curItem = $(this);
+                    var curValue = Number(curItem.val());
+                    if (!curValue || curValue < .1) {
+                        curValue = .1;
+                    }
+                    curItem.val(curValue.toFixed(1));
+                });
+
             });
 
             e.preventDefault();
