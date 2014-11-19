@@ -468,7 +468,7 @@ var timerSlider     = null;
         });
 
         function updateColors() {
-            $('.page-filter-colors-value').remove();
+            $('.page-filter-colors-value, .page-filter-colors-values-wrap').remove();
             var curHTML = '';
             $('.page-filter-color input:checked').each(function() {
                 var curColor = $(this).parent();
@@ -481,6 +481,9 @@ var timerSlider     = null;
                 }
             });
             $('.page-filter-colors-list-preview-inner').html(curHTML);
+            if (curHTML != '') {
+                curHTML = '<div class="page-filter-colors-values-wrap">' + curHTML + '</div>';
+            }
             $('.page-filter-colors-values').prepend(curHTML);
         }
 
@@ -497,12 +500,20 @@ var timerSlider     = null;
             $('.page-filter-colors').data('hasChange', false)
         });
 
-        $('.page-filter-colors').on('click', '.page-filter-colors-value', function() {
+        $('.page-filter-colors').on('click', '.page-filter-colors-value', function(e) {
             var curName = $(this).find('.page-filter-colors-value-text span').html();
             $('.page-filter-color[title="' + curName + '"]').removeClass('checked').find('input').prop('checked', false);
             $('.page-filter-colors').data('hasChange', true)
             updateColors();
             updateFilter();
+            return false;
+        });
+
+        $(document).click(function(e) {
+            if ($(e.target).parents().filter('.page-filter-colors').length == 0) {
+                $('.page-filter-colors').removeClass('page-filter-colors-open');
+                updateFilter();
+            }
         });
 
         // очистка фильтра
@@ -546,7 +557,7 @@ var timerSlider     = null;
                 var curEl = $(this);
                 curEl.attr('data-curID', curID);
                 if ($(this).find('input').val() != '0') {
-                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="select"><span>' + $(this).find('.page-filter-select-value span').html() + '<small></small></span></div>';
+                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="select"><span><em>' + $(this).find('.page-filter-select-value span').html() + '</em><small></small></span></div>';
                 }
                 curID++;
             });
@@ -560,7 +571,7 @@ var timerSlider     = null;
                 });
                 if (curText != '') {
                     curText = curText.substring(0, curText.length - 2);
-                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="color"><span>' + curText + '<small></small></span></div>';
+                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="color"><span><em>' + curText + '</em><small></small></span></div>';
                 }
                 curID++;
             });
@@ -569,13 +580,13 @@ var timerSlider     = null;
                 var curSlider = $(this);
                 curSlider.attr('data-curID', curID);
                 if (!(curSlider.find('.filter-slider-min').html() == curSlider.find('input').eq(0).val() && curSlider.find('.filter-slider-max').html() == curSlider.find('input').eq(1).val())) {
-                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="slider"><span>' +
+                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="slider"><span><em>' +
                     curSlider.find('.filter-slider-from').html() + ' ' +
                     curSlider.find('input').eq(0).val() + ' ' +
                     curSlider.find('.filter-slider-to').html() + ' ' +
                     curSlider.find('input').eq(1).val() + ' ' +
                     curSlider.find('.filter-slider-unit').html() +
-                    '<small></small></span></div>';
+                    '</em><small></small></span></div>';
                 }
                 curID++;
             });
@@ -584,7 +595,7 @@ var timerSlider     = null;
                 var curEl = $(this);
                 curEl.attr('data-curID', curID);
                 if (curEl.find('span').hasClass('checked')) {
-                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="checkbox"><span>' + $(this).text() + '<small></small></span></div>';
+                    newHTML += '<div class="page-filter-result-item" data-curID="' + curID + '" data-type="checkbox"><span><em>' + $(this).text() + '</em><small></small></span></div>';
                 }
                 curID++;
             });
@@ -600,7 +611,26 @@ var timerSlider     = null;
 
         updateFilter();
 
+        $('.page-filter-result-list').on('click', '.page-filter-result-item em', function() {
+            $('.page-filter-result-list-inner').stop().css({'left': 'auto'});
+            var curItem = $(this).parent().parent();
+            var curLeft = curItem.offset().left;
+            var curWidth = curItem.width();
+            var parentLeft = $('.page-filter-result-list').offset().left;
+            var parentWidth = $('.page-filter-result-list').width();
+            if (curLeft - parentLeft + curWidth > parentWidth) {
+                $('.page-filter-result-list-inner').animate({'left': -(curLeft - parentLeft + curWidth - parentWidth + 66)});
+            }
+        });
+
+        $(document).click(function(e) {
+            if ($(e.target).parents().filter('.page-filter-result-item').length == 0) {
+                $('.page-filter-result-list-inner').stop().css({'left': 'auto'});
+            }
+        });
+
         $('.page-filter-result-list').on('click', '.page-filter-result-item small', function() {
+            $('.page-filter-result-list-inner').stop().css({'left': 'auto'});
             var curEL = $(this).parent().parent();
             var curID = curEL.attr('data-curID');
             var curType = curEL.attr('data-type');
@@ -638,15 +668,26 @@ var timerSlider     = null;
                     break;
             }
             curEL.remove();
+            updateFilter();
         });
 
         $('.page-filter-open-link').click(function(e) {
             $('.page-filter').addClass('page-filter-open');
+            if ($('.page-filter-result-list-inner').width() > $('.page-filter-result-list-container').width()) {
+                $('.page-filter-result-list-shadow').show();
+            } else {
+                $('.page-filter-result-list-shadow').hide();
+            }
             e.preventDefault();
         });
 
         $('.page-filter-close-link').click(function(e) {
             $('.page-filter').removeClass('page-filter-open');
+            if ($('.page-filter-result-list-inner').width() > $('.page-filter-result-list-container').width()) {
+                $('.page-filter-result-list-shadow').show();
+            } else {
+                $('.page-filter-result-list-shadow').hide();
+            }
             e.preventDefault();
         });
 
