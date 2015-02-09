@@ -433,7 +433,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .page-filter-select-current span {border-bottom:1px dashed #700a53; color:#700a53; white-space:nowrap; position:relative; display:inline-block; vertical-align:top}
 .page-filter-select-current:hover span {border-bottom:none; padding-bottom:1px}
 .page-filter-select-current strong {display:block; width:9px; height:7px; background:url(../images/page-filter-select.png) left -7px; position:absolute; right:0; top:6px}
-.page-filter-select-list ul {margin:0; padding:2px 0 15px 0; float:left; width:100%; line-height:20px}
+.page-filter-select-list ul {margin:0; padding:2px 0 15px 0; float:left; min-width:100%; line-height:20px; max-height:200px; position:relative; overflow:auto}
 .page-filter-select-list ul li {margin:0; padding:0; background:none; font-style:italic}
 .page-filter-select-list ul li a {color:#565656; text-decoration:none}
 .page-filter-select-list ul li.active a,
@@ -488,7 +488,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .page-filter-color input {position:absolute; left:-9999px; top:-9999px}
 .page-filter-color-active {display:none}
 .page-filter-color sup {display:none; position:absolute; left:-2px; top:-2px; width:51px; height:22px; border:1px solid #bfbfbf; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px; border-radius:5px; behavior:url(./js/PIE.htc)}
-.page-filter-color:hover sup {display:block}
+.page-filter-colors.hoverable .page-filter-color:hover sup {display:block}
 .page-filter-color-invert sup {left:-3px; top:-3px}
 .page-filter-color.checked sup {display:block; border-color:#000}
 .page-filter-colors-btn {position:absolute; right:-15px; top:-14px}
@@ -611,8 +611,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .item-pay-text-title {font-size:17px; line-height:21px; padding:0 0 6px 0}
 .item-pay-text-title img {vertical-align:middle; margin:0 0 2px 0}
 .item-pay-text p {margin:20px 0; padding:0}
-.item-pay-close {display:block; width:11px; height:11px; position:absolute; right:31px; top:27px; background:url(../images/window-close.png)}
-.item-pay-close:hover {background-position:left -11px}
+.item-pay-close {display:block; width:11px; height:11px; position:absolute; right:31px; top:27px; background:url(../images/item-delivery-close.png)}
 
 .item-delivery {float:right; position:relative}
 .item-delivery-open {z-index:99}
@@ -626,8 +625,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .item-delivery-text-title {font-size:17px; line-height:21px; padding:0 0 6px 0; text-align:right}
 .item-delivery-text-title img {vertical-align:middle; margin:0 0 2px 0; position:relative; top:-2px}
 .item-delivery-text p {margin:20px 0; padding:0}
-.item-delivery-close {display:block; width:11px; height:11px; position:absolute; right:31px; top:27px; background:url(../images/window-close.png)}
-.item-delivery-close:hover {background-position:left -11px}
+.item-delivery-close {display:block; width:11px; height:11px; position:absolute; right:31px; top:27px; background:url(../images/item-delivery-close.png)}
 
 .item-info {width:100%; padding:8px 0 0 0}
 .item-info:after {content:"."; display:block; clear:both; visibility:hidden; height:0}

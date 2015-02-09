@@ -467,6 +467,10 @@ var timerSlider     = null;
             updateColors();
         });
 
+        if (!Modernizr.touch) {
+            $('.page-filter-colors').addClass('hoverable');
+        }
+
         function updateColors() {
             $('.page-filter-colors-value, .page-filter-colors-values-wrap').remove();
             var curHTML = '';
