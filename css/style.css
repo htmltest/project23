@@ -433,7 +433,7 @@ nav ul li.active a {background:#b6724d; color:#fff; text-decoration:none; margin
 .page-filter-select-current span {border-bottom:1px dashed #700a53; color:#700a53; white-space:nowrap; position:relative; display:inline-block; vertical-align:top}
 .page-filter-select-current:hover span {border-bottom:none; padding-bottom:1px}
 .page-filter-select-current strong {display:block; width:9px; height:7px; background:url(../images/page-filter-select.png) left -7px; position:absolute; right:0; top:6px}
-.page-filter-select-list ul {margin:0; padding:2px 0 15px 0; float:left; min-width:100%; line-height:20px; max-height:200px; position:relative; overflow:auto}
+.page-filter-select-list ul {margin:0; padding:2px 20px 15px 0; float:left; min-width:100%; line-height:20px; max-height:200px; position:relative; overflow-y:auto; overflow-x:hidden}
 .page-filter-select-list ul li {margin:0; padding:0; background:none; font-style:italic}
 .page-filter-select-list ul li a {color:#565656; text-decoration:none}
 .page-filter-select-list ul li.active a,
