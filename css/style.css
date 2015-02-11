@@ -657,6 +657,11 @@ footer {margin-top:-167px; height:140px; padding:27px 0 0 0; position:relative; 
 .footer-social-3:hover {background-position:left -17px}
 .footer-social-4 {float:left; width:21px; height:17px; background:url(../images/footer-social-4.png); margin:11px 0 0 12px}
 .footer-social-4:hover {background-position:left -17px}
+.footer-social-5 {float:left; width:11px; height:19px; background:url(../images/footer-social-5.png); margin:10px 0 0 15px}
+.footer-social-5:hover {background-position:left -19px}
+a.developer {float:left; text-decoration:none; color:#c2c2c2; margin:34px 0 0 2px}
+a.developer:hover {color:#c2c2c2}
+a.developer img {display:block}
 
 .window {position:absolute; left:0; top:0; width:100%; height:100%; z-index:99997; overflow:auto}
 .window-overlay {position:absolute; left:0; top:0; width:100%; height:100%; z-index:99998; background:#000; opacity:.87; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=87)}
