@@ -468,7 +468,7 @@ var timerSlider     = null;
         });
 
         if (!Modernizr.touch) {
-            $('.page-filter-colors').addClass('hoverable');
+            $('body').addClass('hoverable');
         }
 
         function updateColors() {
